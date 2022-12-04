@@ -1,0 +1,51 @@
+<div class="container">
+  <h1>{{ "theme.title" | translate }}</h1>
+
+  <div id="alert-theme" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-theme-text"></span>
+  </div>
+
+  <form class="my-3 form-central animate__animated animate__fadeIn animate_slow" [formGroup]="themeForm" (ngSubmit)="save()">
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="name" class="form-label">{{ "theme.name.label" | translate }}</label>
+        <input type="text" [formControl]="name" class="form-control" [placeholder]="'theme.name.placeholder' | translate"
+               [ngClass]="{'is-invalid': nameInvalid, 'disable': update}" [readonly]="update"/>
+
+        <div *ngIf="name.errors">
+          <span *ngIf="nameInvalid" class="error">
+            <span *ngIf="name.errors['required']">{{ "theme.name.errors.required" | translate }}</span>
+            <span *ngIf="name.errors['minlength']">{{ "theme.name.errors.minlength" | translate }}</span>
+            <span *ngIf="name.errors['maxlength']">{{ "theme.name.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-3">
+        <label for="description" class="form-label">{{ "theme.description.label" | translate }}</label>
+        <textarea [formControl]="description" class="form-control" [placeholder]="'theme.description.placeholder' | translate"
+                  [ngClass]="descriptionInvalid ? 'is-invalid' : ''" rows="10"></textarea>
+
+        <div *ngIf="description.errors">
+          <span *ngIf="descriptionInvalid" class="error">
+            <span *ngIf="description.errors['maxlength']">{{ "theme.description.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!themeForm.valid"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Guardar cambios de mi tema">
+      <i class="fa-solid fa-download me-1"></i>
+      <span>{{ "theme.buttons.save.title" | translate }}</span>
+    </button>
+
+    <a class="btn btn-outline-primary my-3 me-3 float-end" role="button" [routerLink]="['/themes', loggedUser, 'list']">
+      <i class="fa-solid fa-arrow-rotate-left me-1"></i>
+      <span>{{ "theme.buttons.return.title" | translate }}</span>
+    </a>
+  </form>
+</div>

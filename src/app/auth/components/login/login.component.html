@@ -1,0 +1,55 @@
+<div class="container container-card-center">
+
+  <div id="alert-login" class="alert alert-success col-lg-6 col-md-8 col-sm-12 mb-5 mx-auto fw-bold d-none animate__animated animate__fadeIn" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-login-text"></span>
+  </div>
+
+  <div class="card bg-dark border-secondary p-2 card-center col-lg-6 col-md-8 col-sm-12 animate__animated animate__fadeInLeft animate__fast">
+    <div class="card-body">
+      <h1 class="card-title pt-3 pb-4">{{ "login.title" | translate }}</h1>
+
+      <form class="my-3" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="col-12 mb-3">
+          <label for="name" class="form-label">{{ "login.name.label" | translate }}</label>
+          <input type="text" [formControl]="name" class="form-control" [placeholder]="'login.name.placeholder' | translate"
+                 [ngClass]="nameInvalid ? 'is-invalid' : ''"/>
+
+          <div *ngIf="name.errors">
+            <span *ngIf="nameInvalid" class="error">
+              <span *ngIf="name.errors['required']">{{ "login.name.errors.required" | translate }}</span>
+              <span *ngIf="name.errors['minlength']">{{ "login.name.errors.minlength" | translate }}</span>
+              <span *ngIf="name.errors['maxlength']">{{ "login.name.errors.maxlength" | translate }}</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <label for="password" class="form-label">{{ "login.password.label" | translate }}</label>
+          <input type="password" [formControl]="password" class="form-control" [placeholder]="'login.password.placeholder' | translate"
+                 [ngClass]="passwordInvalid ? 'is-invalid' : ''"/>
+
+          <div *ngIf="password.errors">
+            <span *ngIf="passwordInvalid" class="error">
+              <span *ngIf="password.errors['required']">{{ "login.password.errors.required" | translate }}</span>
+              <span *ngIf="password.errors['minlength']">{{ "login.password.errors.minlength" | translate }}</span>
+              <span *ngIf="password.errors['maxlength']">{{ "login.password.errors.maxlength" | translate }}</span>
+            </span>
+          </div>
+        </div>
+
+        <a class="btn btn-outline-dark link my-3 float-start" role="button" [routerLink]="['/auth/register']"
+           data-bs-toggle="tooltip" data-bs-placement="top" title="">
+          <i class="fa-solid fa-up-right-from-square text-info me-1"></i>
+          <span class="text-info">{{ "login.register.title" | translate }}</span>
+        </a>
+
+        <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!loginForm.valid"
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Iniciar sesión en la plataforma">
+          <i class="fa-solid fa-right-to-bracket me-1"></i>
+          <span>{{ "login.button.title" | translate }}</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

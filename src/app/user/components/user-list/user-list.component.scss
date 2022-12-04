@@ -1,0 +1,9 @@
+@import "src/styles";
+
+.list-users {
+  padding-bottom: 10rem !important;
+}
+
+.form-check-input:checked {
+  background-color: $principal-color !important;
+}

@@ -1,0 +1,81 @@
+<div class="container">
+  <h1 class="d-inline-block">{{ "profile.title" | translate }}</h1>
+
+  <h5 *ngIf="isNotSubcribed" class="d-inline-block mt-4 float-end">
+    <span class="badge badge-warning bg-warning text-dark">{{ "profile.badges.notsubscribed" | translate }}</span>
+  </h5>
+  <h5 *ngIf="isSubcribed" class="d-inline-block mt-4 float-end">
+    <span class="badge badge-success bg-success">{{ "profile.badges.subscribed" | translate }}</span>
+  </h5>
+
+  <div id="alert-subscribe" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-subscribe-text"></span>
+  </div>
+
+  <div class="profile-central animate__animated animate__fadeIn animate_slow">
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <p class="form-label label-xl">{{ "profile.name" | translate }}</p>
+        <p class="form-label">{{ user.name }}</p>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <p class="form-label label-xl">{{ "profile.dateBirth" | translate }}</p>
+        <p *ngIf="user.profile && user.profile.dateBirth" class="form-label">{{ user.profile.dateBirth | date: 'dd-MM-yyyy' }}</p>
+        <p *ngIf="!user.profile || !user.profile.dateBirth" class="form-label">{{ "generic.unspecified" | translate }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <p class="form-label label-xl">{{ "profile.email" | translate }}</p>
+        <p class="form-label">{{ user.email }}</p>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <p class="form-label label-xl">{{ "profile.userName" | translate }}</p>
+        <p class="form-label">{{ user.userName }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-3">
+        <p class="form-label label-xl">{{ "profile.description" | translate }}</p>
+        <p *ngIf="user.profile && user.profile.description" class="form-label">{{ user.profile.description }}</p>
+        <p *ngIf="!user.profile || !user.profile.description" class="form-label">{{ "generic.unspecified" | translate }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="isProducer" class="row mb-3">
+      <p class="form-label label-xl">{{ "profile.rating" | translate }}</p>
+      <star-rating [value]="user.rating" 
+                   [totalstars]="totalStars" 
+                   checkedcolor="yellow" 
+                   uncheckedcolor="grey" 
+                   size="20px" 
+                   [readonly]="readonly">
+      </star-rating>
+    </div>
+
+    <button [ngClass]="isNotSubcribed ? '' : 'd-none'" (click)="subscribe()"
+            type="button" class="btn btn-outline-success my-3 me-3 float-end"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fa-solid fa-user-plus me-1"></i>
+      <span>{{ "profile.buttons.subscribe" | translate }}</span>
+    </button>
+
+    <button [ngClass]="isSubcribed ? '' : 'd-none'" (click)="unsubscribe()"
+            type="button" class="btn btn-outline-danger my-3 me-3 float-end"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fa-solid fa-user-minus me-1"></i>
+      <span>{{ "profile.buttons.unsubscribe" | translate }}</span>
+    </button>
+
+    <a class="btn btn-outline-primary my-3 me-3 float-end" role="button" [routerLink]="['/profiles/list']"
+       data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fa-solid fa-arrow-rotate-left me-1"></i>
+      <span>{{ "generic.buttons.return" | translate }}</span>
+    </a>
+  </div>
+</div>

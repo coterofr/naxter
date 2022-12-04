@@ -1,0 +1,623 @@
+{
+  "generic": {
+    "unspecified": "Unspecified",
+    "buttons": {
+      "return": "Return",
+      "cancel": "Cancelar"
+    }
+  },
+
+  "header": {
+    "title": "Naxter",
+    "nav": {
+      "home": "Naxter",
+      "posts": "Posts",
+      "profiles": "Profiles",
+      "merchandising": "Merchandising",
+      "admin": "Administration",
+      "users": "Users",
+      "login": "Login",
+      "register": "Register",
+      "account": "Account",
+      "profile": "Profile",
+      "logout": "Logout"
+    },
+    "search": {
+      "placeholder": "Search post...",
+      "button": "Search"
+    },
+    "language": {
+      "title": "Language",
+      "spanish": "Spanish",
+      "english": "English"
+    }
+  },
+
+  "footer": {
+    "app": "Naxter",
+    "features": "Features",
+    "faqs": "FAQs",
+    "about": "About",
+    "platform": "Platform",
+    "home": "Home",
+    "posts": "Posts",
+    "profiles": "profiles",
+    "start": "Start",
+    "return": "Return",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "search": {
+      "title": "Find your posts",
+      "subtitle": "Thousands of posts are published daily",
+      "label": "Search post",
+      "placeholder": "Search post...",
+      "button": "Search"
+    }
+  },
+
+  "login": {
+    "title": "Login",
+    "name": {
+      "label": "User: ",
+      "placeholder": "Enter the user...",
+      "errors": {
+        "required": "User is required",
+        "minlength": "User must be at least 5 characters",
+        "maxlength": "User can be max 25 characters long"
+      }
+    },
+    "password": {
+      "label": "Password: ",
+      "placeholder": "Enter the password...",
+      "errors": {
+        "required": "Password is required",
+        "minlength": "Password must be at least 5 characters",
+        "maxlength": "Password can be max 50 characters long"
+      }
+    },
+    "register": {
+      "title": "Create account",
+      "tooltip": "Create a platform account"
+    },
+    "button": {
+      "title": "Login",
+      "tooltip": "Login to the platform"
+    },
+    "logged": "Successfully logged user",
+    "errors": {
+      "title": "Login failed",
+      "messageError": "Enter the user and password correctly",
+      "messageBlock": "Your account is blocked, please contact with a platform administrator"
+    }
+  },
+
+  "register": {
+    "title": "Register",
+    "name": {
+      "label": "User: ",
+      "placeholder": "Enter the user...",
+      "errors": {
+        "required": "User is required",
+        "minlength": "User must be at least 5 characters",
+        "maxlength": "User can be max 25 characters long"
+      }
+    },
+    "email": {
+      "label": "Email: ",
+      "placeholder": "Enter the email...",
+      "errors": {
+        "required": "Email is required",
+        "format": "Email must have an appropriate format",
+        "minlength": "Email must be at least 10 characters",
+        "maxlength": "Email can be max 50 characters long"
+      }
+    },
+    "userName": {
+      "label": "Name: ",
+      "placeholder": "Enter the name and surname...",
+      "errors": {
+        "required": "Name is required",
+        "minlength": "User name must be at least 5 characters",
+        "maxlength": "User name can be max 50 characters long"
+      }
+    },
+    "password": {
+      "label": "Password: ",
+      "placeholder": "Enter the password...",
+      "errors": {
+        "required": "Password is required",
+        "minlength": "Password must be at least 5 characters",
+        "maxlength": "Password can be max 50 characters long"
+      }
+    },
+    "button": {
+      "title": "Register",
+      "tooltip": "Register on the platform"
+    },
+    "success": "Successfully registered user",
+    "errors": {
+      "title": "Register failed",
+      "messageError": "There was an error sending the data, please try again",
+      "messageExists": "User already exists by user or email"
+    }
+  },
+
+  "account": {
+    "title": "My profile account",
+    "visits": "Visits: ",
+    "role": "Role: ",
+    "rating": "Rating: ",
+    "changeRole": "Allow to subscribe to content creators and rate and comment on their posts",
+    "name": {
+      "label": "User: ",
+      "placeholder": "Enter the user...",
+      "errors": {
+        "required": "User is required",
+        "minlength": "User must be at least 5 characters",
+        "maxlength": "User can be max 25 characters long"
+      }
+    },
+    "email": {
+      "label": "Email: ",
+      "placeholder": "Enter the email...",
+      "errors": {
+        "required": "Email is required",
+        "format": "Email must have an appropriate format",
+        "minlength": "Email must be at least 10 characters",
+        "maxlength": "Email can be max 50 characters long"
+      }
+    },
+    "userName": {
+      "label": "Name: ",
+      "placeholder": "Enter the name and surname...",
+      "errors": {
+        "required": "Name is required",
+        "minlength": "User name must be at least 5 characters",
+        "maxlength": "User name can be max 50 characters long"
+      }
+    },
+    "description": {
+      "label": "Description: ",
+      "placeholder": "Enter the description...",
+      "errors": {
+        "maxlength": "Description can be max 500 characters long"
+      }
+    },
+    "dateBirth": {
+      "label": "Birth date: ",
+      "placeholder": "Enter the birth date...",
+      "errors": {
+        "format": "Birth date must have an appropriate format"
+      }
+    },
+    "buttons": {
+      "save": {
+        "title": "Save",
+        "tooltip": "Save changes on my profile"
+      },
+      "delete": {
+        "title": "Delete account",
+        "tooltip": "Delete my profile account"
+      },
+      "return": {
+        "title": "Go to profiles",
+        "tooltip": "Go to profiles section"
+      }
+    },
+    "saved": "Profile updated successfully",
+    "confirmDelete": {
+      "title": "Confirm delete profile account",
+      "message": "Are you sure you want to delete your profile account?"
+    },
+    "deleted": "Successfully deleted profile account",
+    "errors": {
+      "title": "Profile update failed",
+      "messageError": "There was an error sending the data, please try again",
+      "messageExists": "User already exists by user or email"
+    }
+  },
+
+  "home": {
+    "title": "Naxter",
+    "welcome": "Welcome ",
+    "slider": "Most featured posts",
+    "subscriptions": "Your subscriptions",
+    "posts": "Featured posts of "
+  },
+
+  "themes": {
+    "title": "My themes",
+    "link": "Manage my themes",
+    "unspecified": "Unspecified description",
+    "search": {
+      "label": "Search: ",
+      "placeholder": "Search themes by name...",
+      "info": "user theme/s found",
+      "errors": {
+        "notFound": "No theme found with that name"
+      }
+    },
+    "buttons": {
+      "new": "New",
+      "delete": "Delete",
+      "edit": "Edit",
+      "detail": "Detail"
+    }
+  },
+
+  "theme": {
+    "title": "Theme",
+    "name": {
+      "label": "Name: ",
+      "placeholder": "Enter the name...",
+      "errors": {
+        "required": "Name is required",
+        "minlength": "Name must be at least 5 characters",
+        "maxlength": "Name can be max 25 characters long"
+      }
+    },
+    "description": {
+      "label": "Description: ",
+      "placeholder": "Enter the description...",
+      "errors": {
+        "maxlength": "Description can be max 500 characters long"
+      }
+    },
+    "buttons": {
+      "save": {
+        "title": "Save",
+        "tooltip": "Save changes on my theme"
+      },
+      "delete": {
+        "title": "Delete",
+        "tooltip": "Delete mi theme"
+      },
+      "return": {
+        "title": "Return",
+        "tooltip": "Go to my themes section"
+      }
+    },
+    "created": "Theme created successfully",
+    "updated": "Theme updated successfully",
+    "confirmDelete": {
+      "title": "Confirm delete theme",
+      "message": "Are you sure you want to delete your theme"
+    },
+    "deleted": "Successfully deleted theme",
+    "errors": {
+      "titleCreated": "Theme created failed",
+      "titleUpdated": "Theme update failed",
+      "messageError": "There was an error sending the data, please try again",
+      "messageExists": "Theme already exists by name"
+    }
+  },
+
+  "posts": {
+    "title": "Posts",
+    "search": {
+      "theme": {
+        "label": "Theme:",
+        "placeholder": "Search posts by theme..."
+      },
+      "name": {
+        "label": "Nombre:",
+        "placeholder": "Search posts by name..."
+      },
+      "user": {
+        "label": "Autor",
+        "placeholder": "Search posts by author..."
+      },
+      "info": "post/es found"
+    },
+    "buttons": {
+      "new": "New",
+      "edit": "Edit",
+      "detail": "Details",
+      "delete": "Delete"
+    }
+  },
+
+  "post": {
+    "title": "Post",
+    "name": {
+      "label": "Name: ",
+      "placeholder": "Enter the name...",
+      "errors": {
+        "required": "Name is required",
+        "minlength": "Name must be at least 5 characters",
+        "maxlength": "Name can be max 25 characters long"
+      }
+    },
+    "theme": {
+      "title": "Theme",
+      "label": "Theme: ",
+      "placeholder": "Select theme...",
+      "errors": {
+        "required": "Theme is required",
+        "minlength": "Theme must be at least 5 characters",
+        "maxlength": "Theme can be max 25 characters long"
+      }
+    },
+    "description": {
+      "title": "Description",
+      "label": "Description: ",
+      "placeholder": "Enter the description...",
+      "errors": {
+        "required": "Description is required",
+        "minlength": "Description must be at least 5 characters",
+        "maxlength": "Description can be max 500 characters long"
+      }
+    },
+    "author": "Author",
+    "rating": "Post rating",
+    "rate": "Rate this post!",
+    "buttons": {
+      "save": {
+        "title": "Save",
+        "tooltip": "Save changes on my post"
+      },
+      "add": {
+        "title": "Add",
+        "tooltip": "Add tag on my post"
+      },
+      "delete": {
+        "title": "Delete",
+        "tooltip": "Delete the post"
+      },
+      "return": {
+        "title": "Return",
+        "tooltip": "Go to posts section"
+      }
+    },
+    "created": "Post created successfully",
+    "updated": "Post updated successfully",
+    "confirmDelete": {
+      "title": "Confirm delete post",
+      "message": "Are you sure you want to delete your post"
+    },
+    "deleted": "Successfully deleted post",
+    "errors": {
+      "titleCreated": "Post created failed",
+      "titleUpdated": "Post updated failed",
+      "titleDeleted": "Post deleted failed",
+      "message": "There was an error sending the data, please try again"
+    },
+    "rated": "Your rating has been incorporated correctly, the average rating has changed from {{ oldValue }} to {{ newValue }}",
+
+    "tags": {
+      "title": "Tags",
+      "name": {
+        "title": "Tag",
+        "label": "Tag: ",
+        "placeholder": "Enter the name...",
+        "errors": {
+          "required": "Name is required",
+          "minlength": "Name must be at least 5 characters",
+          "maxlength": "Name can be max 25 characters long"
+        }
+      },
+      "description": {
+        "title": "Description",
+        "label": "Description: ",
+        "placeholder": "Enter the description..."
+      },
+      "added": "Tag added successfully",
+      "deleted": "Tag deleted successfully",
+      "delete": "Delete",
+      "errors": {
+        "titleAdded": "Tag added failed",
+        "titleDeleted": "Tag deleted failed",
+        "message": "There was an error sending the data, please try again"
+      }
+    }
+  },
+
+  "comment": {
+    "title": "Comment",
+    "content": {
+      "label": "Comment: ",
+      "placeholder": "Add comment...",
+      "errors": {
+        "required": "Comment is required",
+        "minlength": "Comment must be at least 5 characters",
+        "maxlength": "Comment can be max 500 characters long"
+      }
+    },
+    "buttons": {
+      "add": "Comment",
+      "edit": "Update",
+      "delete": "Delete"
+    },
+    "confirmDelete": {
+      "title": "Confirm delete comment",
+      "message": "Are you sure you want to delete the comment"
+    },
+    "added": "Comment added successfully",
+    "updated": "Comment updated successfully",
+    "deleted": "Comment deleted successfully",
+    "errors": {
+      "titleAdded": "Comment added failed",
+      "titleUpdated": "Comment updated failed",
+      "titleDeleted": "Comment deleted failed",
+      "message": "There was an error sending the data, please try again"
+    }
+  },
+
+  "profiles": {
+    "title": "Profiles",
+    "unspecified": "Unspecified description",
+    "subscribed": "Subscription successful",
+    "unsubscribed": "Unsubscription successful",
+    "search": {
+      "label": "Search: ",
+      "placeholder": "Search profiles by user...",
+      "info": "user profile/s found",
+      "errors": {
+        "notFound": "No profile found with that user"
+      }
+    },
+    "buttons": {
+      "view": "View",
+      "subscribe": "Subs.",
+      "unsubscribe": "Unsubs."
+    }
+  },
+
+  "profile": {
+    "title": "Profile",
+    "subscribed": "Subscription successful",
+    "unsubscribed": "Unsubscription successful",
+    "badges": {
+      "subscribed": "Subscribed",
+      "notsubscribed": "Not subscribed"
+    },
+    "name": "User: ",
+    "email": "Email: ",
+    "userName": "Name: ",
+    "description": "Description: ",
+    "dateBirth": "Birth date: ",
+    "rating": "Rating",
+    "buttons": {
+      "subscribe": "Subscribe",
+      "unsubscribe": "Unsubscribe"
+    }
+  },
+
+  "chat": {
+    "title": "Chat",
+    "message": {
+      "label": "Message: ",
+      "placeholder": "Send message...",
+      "errors": {
+        "required": "Message is required",
+        "minlength": "Message must be at least 1 characters",
+        "maxlength": "Message can be max 250 characters long"
+      },
+      "sended": "Message sended correctly"
+    },
+    "buttons": {
+      "chat": {
+        "title": "Chat",
+        "tooltip": "Access chat"
+      },
+      "send": {
+        "title": "Send",
+        "tooltip": "Send message"
+      }
+    },
+    "errors": {
+      "titleAdded": "Message sended failed",
+      "message": "There was an error sending the message, please try again"
+    }
+  },
+
+  "merchandising": {
+    "title": "Merchandising"
+  },
+
+  "admin": {
+    
+    "users": {
+      "title": "Users",
+      "name": "User",
+      "email": "Email",
+      "userName": "Name",
+      "role": "Role",
+      "block": "Blocked",
+      "edit": "Edit",
+      "delete": "Delete",
+      "blocked": "Successfully blocked user",
+      "unblocked": "Successfully unblocked user",
+      "confirmDelete": {
+        "title": "Confirm delete user",
+        "message": "Are you sure you want to delete the user {{ user }}?"
+      },
+      "deleted": "Successfully deleted user",
+      "roles": {
+        "generic": "Generic",
+        "consumer": "Consumer",
+        "moderator": "Moderator",
+        "producer": "Producer",
+        "admin": "Administrator"
+      }
+    },
+
+    "user": {
+      "title": "Configuration",
+      "subtitle": "User card",
+      "name": {
+        "label": "User: ",
+        "placeholder": "Enter the user...",
+        "errors": {
+          "required": "User is required",
+          "minlength": "User must be at least 5 characters",
+          "maxlength": "User can be max 25 characters long"
+        }
+      },
+      "role": {
+        "label": "Role: ",
+        "placeholder": "Select role...",
+        "errors": {
+          "required": "You must select a role",
+          "minlength": "Role must be at least 5 characters",
+          "maxlength": "Role can be max 50 characters long"
+        }
+      },
+      "email": {
+        "label": "Email: ",
+        "placeholder": "Enter the email...",
+        "errors": {
+          "required": "Email is required",
+          "format": "Email must have an appropriate format",
+          "minlength": "Email must be at least 10 characters",
+          "maxlength": "Email can be max 50 characters long"
+        }
+      },
+      "userName": {
+        "label": "Name: ",
+        "placeholder": "Enter the name and surname...",
+        "errors": {
+          "required": "Name is required",
+          "minlength": "User name must be at least 5 characters",
+          "maxlength": "User name can be max 50 characters long"
+        }
+      },
+      "badges": {
+        "block": "User block",
+        "unblock": "User not block"
+      },
+      "buttons": {
+        "block": {
+          "title": "Block",
+          "tooltip": "Block user"
+        },
+        "unblock": {
+          "title": "Unblock",
+          "tooltip": "Unblock user"
+        },
+        "delete": {
+          "title": "Delete",
+          "tooltip": "Delete user"
+        },
+        "save": {
+          "title": "Save",
+          "tooltip": "Save configuration user"
+        }
+      },
+      "blocked": "Successfully blocked user",
+      "unblocked": "Successfully unblocked user",
+      "configurated": "Successfully configurated user",
+      "confirmDelete": {
+        "title": "Confirm delete user",
+        "message": "Are you sure you want to delete the user {{ user }}?"
+      },
+      "deleted": "Successfully deleted user",
+      "errors": {
+        "title": "Configuration failed",
+        "messageError": "There was an error sending the data, please try again",
+        "messageExists": "User already exists by user or email"
+      }
+    }
+  }
+}

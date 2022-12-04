@@ -1,0 +1,41 @@
+<div class="card card-item bg-dark border-secondary p-1">
+  <div class="card-body position-relative">
+    <h2 class="card-title">{{ post.name }}</h2>
+
+    <div *ngIf="post.tags" class="tag-list">
+      <div *ngFor="let tag of post.tags" class="d-inline mb-2">
+        <span class="badge badge-warning bg-warning text-dark badge-lg me-2 mb-2" data-bs-toggle="tooltip" data-bs-placement="top" title="">{{ tag.name }}</span>
+      </div>
+    </div>
+
+    <star-rating [value]="post.rating" 
+                 [totalstars]="totalStars" 
+                 checkedcolor="yellow" 
+                 uncheckedcolor="grey" 
+                 size="20px" 
+                 [readonly]="readonly">
+    </star-rating>
+
+    <p *ngIf="post.description" class="card-description text-justify my-3">{{ post.description | cutText:200 }}</p>
+
+    <div class="position-absolute bottom-0 end-0">
+      <a *ngIf="canDelete" class="btn btn-outline-danger my-3 me-3" role="button" (click)="delete()"
+         data-bs-toggle="tooltip" data-bs-placement="top" title="">
+        <i class="fa-solid fa-trash-can me-1"></i>
+        <span>{{ "posts.buttons.delete" | translate }}</span>
+      </a>
+
+      <a *ngIf="canEdit" class="btn btn-outline-success my-3 me-3" role="button" [routerLink]="['/posts', post.id, 'edit']"
+         data-bs-toggle="tooltip" data-bs-placement="top" title="">
+        <i class="fa-solid fa-pen-to-square me-1"></i>
+        <span>{{ "posts.buttons.edit" | translate }}</span>
+      </a>
+
+      <a class="btn btn-outline-info my-3 me-3" role="button" [routerLink]="['/posts', post.id, 'detail']"
+         data-bs-toggle="tooltip" data-bs-placement="top" title="">
+        <i class="fa-solid fa-eye me-1"></i>
+        <span>{{ "posts.buttons.detail" | translate }}</span>
+      </a>
+    </div>
+  </div>
+</div>

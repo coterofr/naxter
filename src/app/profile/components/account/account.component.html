@@ -1,0 +1,118 @@
+<div class="container">
+  <h1>{{ "account.title" | translate }}</h1>
+
+  <div id="alert-profile" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-profile-text"></span>
+  </div>
+
+  <div id="alert-delete" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-delete-text"></span>
+  </div>
+
+  <h5>{{ "account.visits" | translate }} {{ visits }}</h5>
+  <h5>{{ "account.role" | translate }} {{ role }}</h5>
+
+  <div *ngIf="user.name && isProducer">
+    <h5>{{ "account.rating" | translate }}</h5>
+    <star-rating [value]="user.rating" 
+                 [totalstars]="totalStars" 
+                 checkedcolor="yellow" 
+                 uncheckedcolor="grey" 
+                 size="20px" 
+                 [readonly]="readonly">
+    </star-rating>
+  </div>
+
+  <div *ngIf="!isProducer" class="form-check form-switch d-inline-block">
+    <label class="form-label label-lg">{{ "account.changeRole" | translate }}</label>
+    <input class="form-check-input text-info pointer" type="checkbox" [checked]="isConsumer" (change)="changeGenericRole()" readonly
+           data-bs-toggle="tooltip" data-bs-placement="right" title="">
+  </div>
+
+  <form class="my-3 form-central animate__animated animate__fadeIn animate_slow" [formGroup]="profileForm" (ngSubmit)="save()">
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="name" class="form-label">{{ "account.name.label" | translate }}</label>
+        <input type="text" [formControl]="name" class="form-control" [placeholder]="'account.name.placeholder' | translate"
+               [ngClass]="nameInvalid ? 'is-invalid' : ''"/>
+
+        <div *ngIf="name.errors">
+          <span *ngIf="nameInvalid" class="error">
+            <span *ngIf="name.errors['required']">{{ "account.name.errors.required" | translate }}</span>
+            <span *ngIf="name.errors['minlength']">{{ "account.name.errors.minlength" | translate }}</span>
+            <span *ngIf="name.errors['maxlength']">{{ "account.name.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <label for="dateBirth" class="form-label">{{ "account.dateBirth.label" | translate }}</label>
+        <input type="date" [formControl]="dateBirth" class="form-control" placeholder="yyyy-MM-aa" [ngClass]="dateBirthInvalid ? 'is-invalid' : ''"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="email" class="form-label">{{ "account.email.label" | translate }}</label>
+        <input type="email" [formControl]="email" class="form-control" [placeholder]="'account.email.placeholder' | translate"
+               [ngClass]="emailInvalid ? 'is-invalid' : ''"/>
+
+        <div *ngIf="email.errors">
+          <span *ngIf="emailInvalid" class="error">
+            <span *ngIf="email.errors['required']">{{ "account.email.errors.required" | translate }}</span>
+            <div *ngIf="email.errors['pattern']">{{ "account.email.errors.format" | translate }}</div>
+            <span *ngIf="email.errors['minlength']">{{ "account.email.errors.minlength" | translate }}</span>
+            <span *ngIf="email.errors['maxlength']">{{ "account.email.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <label for="userName" class="form-label">{{ "account.userName.label" | translate }}</label>
+        <input type="text" [formControl]="userName" class="form-control" [placeholder]="'account.userName.placeholder' | translate"
+               [ngClass]="userNameInvalid ? 'is-invalid' : ''"/>
+
+        <div *ngIf="userName.errors">
+          <span *ngIf="userNameInvalid" class="error">
+            <span *ngIf="userName.errors['required']">{{ "account.userName.errors.required" | translate }}</span>
+            <span *ngIf="userName.errors['minlength']">{{ "account.userName.errors.minlength" | translate }}</span>
+            <span *ngIf="userName.errors['maxlength']">{{ "account.userName.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-3">
+        <label for="description" class="form-label">{{ "account.description.label" | translate }}</label>
+        <textarea [formControl]="description" class="form-control" [placeholder]="'account.description.placeholder' | translate"
+                  [ngClass]="descriptionInvalid ? 'is-invalid' : ''" rows="10"></textarea>
+
+        <div *ngIf="description.errors">
+          <span *ngIf="descriptionInvalid" class="error">
+            <span *ngIf="description.errors['maxlength']">{{ "account.description.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!profileForm.valid"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Guardar cambios de mi perfil">
+      <i class="fa-solid fa-download me-1"></i>
+      <span>{{ "account.buttons.save.title" | translate }}</span>
+    </button>
+
+    <button type="button" class="btn btn-outline-danger my-3 me-3 float-end" (click)="delete()"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar mi cuenta de perfil">
+      <i class="fa-solid fa-trash-can me-1"></i>
+      <span>{{ "account.buttons.delete.title" | translate }}</span>
+    </button>
+
+    <a class="btn btn-outline-primary my-3 me-3 float-end" role="button" [routerLink]="['/profiles/list']">
+      <i class="fa-solid fa-arrow-rotate-left me-1"></i>
+      <span>{{ "account.buttons.return.title" | translate }}</span>
+    </a>
+  </form>
+</div>

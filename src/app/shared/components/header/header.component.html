@@ -1,0 +1,128 @@
+<div class="navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark container header-bottom">
+    <div class="container-fluid ps-0">
+      <a [routerLink]="['/posts/home']">
+        <img src="assets/img/logo.svg" alt="App logo" class="app-icon"/>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse ms-3 ms-lg-0" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-3 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link header-link" [routerLink]="['/posts/home']" routerLinkActive="active"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="">
+              <i class="fa-solid fa-house me-1"></i>
+              <span>{{ "header.nav.home" | translate }}</span>
+            </a>
+          </li>
+
+          <li *ngIf="isLogged" class="nav-item">
+            <a class="nav-link header-link" [routerLink]="['/posts/list']" routerLinkActive="active"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="">
+              <i class="fa-solid fa-newspaper me-1"></i>
+              <span>{{ "header.nav.posts" | translate }}</span>
+            </a>
+          </li>
+
+          <li *ngIf="isLogged" class="nav-item">
+            <a class="nav-link header-link" [routerLink]="['/profiles/list']" routerLinkActive="active"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="">
+              <i class="fa-solid fa-user-group me-1"></i>
+              <span>{{ "header.nav.profiles" | translate }}</span>
+            </a>
+          </li>
+
+          <li *ngIf="isLogged" class="nav-item">
+            <a class="nav-link header-link disabled" [routerLink]="['/merchandising']" routerLinkActive="active" tabindex="-1" aria-disabled="true"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="">
+              <i class="fa-solid fa-cart-shopping me-1"></i>
+              <span>{{ "header.nav.merchandising" | translate }}</span>
+            </a>
+          </li>
+
+          <li *ngIf="isModerator" class="nav-item dropdown">
+            <a class="nav-link header-link dropdown-toggle" href="#" id="navbarDropdownAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-gear me-1"></i>
+              <span>{{ "header.nav.admin" | translate }}</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+              <li>
+                <a class="header-dropdown dropdown-item" [routerLink]="['/users/list']" routerLinkActive="active active-dropdown"
+                   data-bs-toggle="tooltip" data-bs-placement="left" title="">
+                  <i class="fa-solid fa-user-gear me-1"></i>
+                  <span>{{ "header.nav.users" | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <form class="d-flex my-2 my-lg-0">
+          <input class="form-control ms-0 ms-lg-2 me-2" type="search" [placeholder]="'header.search.placeholder' | translate" aria-label="Search" disabled>
+          <button class="btn btn-outline-info me-lg-2 disabled" type="submit"
+                  data-bs-toggle="tooltip" data-bs-placement="left" title="">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="d-none">{{ "header.search.button" | translate }}</span>
+          </button>
+        </form>
+
+        <ul class="navbar-nav me-lg-2 mb-2 mb-lg-0">
+          <li *ngIf="!isLogged" class="nav-item">
+            <a class="nav-link header-link" aria-current="page" [routerLink]="['/auth/login']" routerLinkActive="active"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="">
+              <i class="fa-solid fa-right-to-bracket me-1"></i>
+              <span>{{ "header.nav.login" | translate }}</span>
+            </a>
+          </li>
+
+          <li *ngIf="!isLogged" class="nav-item">
+            <a class="nav-link header-link" [routerLink]="['/auth/register']" routerLinkActive="active"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="">
+              <i class="fa-solid fa-download me-1"></i>
+              <span>{{ "header.nav.register" | translate }}</span>
+            </a>
+          </li>
+
+          <li *ngIf="isLogged" class="nav-item dropdown mb-2 mb-lg-0">
+            <a class="nav-link header-link dropdown-toggle" href="#" id="navbarDropdownAccount" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user-tie me-1"></i>
+              <span>{{ "header.nav.account" | translate }}</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAccount">
+              <li>
+                <span class="header-role dropdown-item" data-bs-toggle="tooltip" data-bs-placement="left" title="">{{ role }}</span>
+              </li>
+
+              <li>
+                <a class="header-dropdown dropdown-item" [routerLink]="['/profiles', loggedUser, 'account']" routerLinkActive="active active-dropdown"
+                   data-bs-toggle="tooltip" data-bs-placement="left" title="">
+                  <i class="fa-solid fa-user me-1"></i>
+                  <span>{{ "header.nav.profile" | translate }}</span>
+                </a>
+              </li>
+
+              <li>
+                <a class="header-dropdown dropdown-item pointer" [routerLink]="[]" (click)="logout()"
+                   data-bs-toggle="tooltip" data-bs-placement="left" title="">
+                  <i class="fa-solid fa-right-from-bracket me-1"></i>
+                  <span>{{ "header.nav.logout" | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item ms-lg-2 my-2 my-lg-0">
+            <select class="form-select w-auto" aria-label="Languages" name="language" [ngModel]="language" (ngModelChange)="onChangeLanguage($event)">
+              <option value="" disabled>{{ "header.language.title" | translate }}</option>
+              <option value="es" selected>{{ "header.language.spanish" | translate }}</option>
+              <option value="en">{{ "header.language.english" | translate }}</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

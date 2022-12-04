@@ -1,0 +1,26 @@
+@import "src/styles";
+
+.card-group {
+  padding-bottom: 5rem !important;
+}
+
+#alert-search {
+  margin-bottom: 2rem !important;
+}
+
+.card-item {
+  @extend %box-shadow;
+  height: 100%;
+  width: 100%;
+}
+
+.card-description {
+  margin-top: 1rem !important;
+  margin-bottom: 7rem !important;
+}
+
+.profile-picture {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border-radius: 50% !important;
+}

@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css?family=Barlow");
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~animate.css/animate.min.css';
+@import '~swiper/swiper-bundle.min.css';
+
+
+$principal-color: #0dcaf0;
+$background-color: #212529;
+$background-light-color: #2a2e33;
+$background-opacity-color: rgba(0,0,0,0.8);
+$shadow-color: #6c757d;
+$shadow-light-color: #e0e3e6;
+$text-color: #ffffff;
+$error-color: #dc3545;
+
+
+%margin-center {
+  margin: 0 auto !important;
+}
+
+%box-shadow {
+  box-shadow: 0px 2px 7px $shadow-color !important;
+}
+
+%container-card {
+  padding-top: 4.7rem !important;
+}
+
+
+body {
+  font-family: 'Barlow', sans-serif !important;
+}
+
+h1 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+thead {
+  border-bottom-color: $text-color !important;
+}
+
+
+.link {
+  text-decoration: none !important;
+  color: $principal-color !important;
+  opacity: 0.7;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.active {
+  color: $principal-color !important;
+  font-weight: 700 !important;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.alert {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.1rem !important;
+}
+
+.alert>svg {
+  font-size: 1.5rem !important;
+}
+
+.disable {
+  opacity: .5 !important;
+}
+
+.error {
+  font-size: .9rem !important;
+  color: $error-color !important;
+  font-weight: 700;
+}
+
+
+.card-center {
+  @extend %margin-center;
+  @extend %box-shadow;
+}
+
+.component-space {
+  padding-bottom: 35rem !important;
+}
+
+.pagination>li>a {
+  background-color: $background-color !important;
+  color: $shadow-color !important;
+  border: .5px solid $text-color !important;
+}
+
+.pagination>li>a:hover {
+  color: $text-color !important;
+}
+
+
+.label-sm {
+  font-size: 0.9rem !important;
+}
+
+.label-lg {
+  font-size: 1.1rem !important;
+}
+
+.label-xl {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+}
+
+.badge-lg {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+}

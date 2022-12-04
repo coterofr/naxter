@@ -1,0 +1,8 @@
+export enum RoleEnum {
+
+  GENERIC = 'GENERIC',
+  CONSUMER = 'CONSUMER',
+  PRODUCER = 'PRODUCER',
+  MODERATOR = 'MODERATOR',
+  ADMIN = 'ADMIN'
+}

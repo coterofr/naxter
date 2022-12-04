@@ -1,0 +1,26 @@
+<div class="row animate__animated animate__fadeIn animate_slow">
+  <div class="col">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+        <div *ngFor="let post of posts" class="swiper-slide"
+          [ngStyle]="{
+            'background-size': 'cover',
+            'background-position': 'top',
+            'background-image': 'url(assets/img/post-img.jpg)'
+          }">
+
+          <div class="post-description">
+            <h3>{{ post.name }}</h3>
+            <p>{{ post.description | cutText:250 }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <div (click)="prev()" class="swiper-button-prev"></div>
+      <div (click)="next()" class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>

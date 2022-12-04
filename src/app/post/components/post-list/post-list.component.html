@@ -1,0 +1,53 @@
+<div class="container card-group">
+  <div class="col-12">
+    <h1 class="d-inline-block">{{ "posts.title" | translate }}</h1>
+
+    <a *ngIf="isProducer" class="btn btn-outline-warning mt-4 float-end" role="button" [routerLink]="['/themes', loggedUser, 'list']"
+       data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fas fa-folder-open me-1"></i>
+      <span>{{ "themes.link" | translate }}</span>
+    </a>
+
+    <a *ngIf="isProducer" class="btn btn-outline-success mt-4 me-3 float-end" role="button" [routerLink]="['/posts/new']"
+       data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fa-solid fa-plus me-1"></i>
+      <span>{{ "posts.buttons.new" | translate }}</span>
+    </a>
+  </div>
+
+  <div id="alert-delete" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-delete-text"></span>
+  </div>
+
+  <div class="row col-12">
+    <div class="col-12 col-md-4 mb-4">
+      <label for="searchTheme" class="form-label">{{ "posts.search.theme.label" | translate }}</label>
+      <input class="form-control" type="search" name="searchTheme" [placeholder]="'posts.search.theme.placeholder' | translate" aria-label="Search by theme"
+             [(ngModel)]="searchTheme" (keyup)="searchPostsByTheme()">
+    </div>
+  
+    <div class="col-12 col-md-4 mb-4">
+      <label for="searchName" class="form-label">{{ "posts.search.name.label" | translate }}</label>
+      <input class="form-control" type="search" name="searchName" [placeholder]="'posts.search.name.placeholder' | translate" aria-label="Search by name"
+             [(ngModel)]="searchName" (keyup)="searchPostsByName()">
+    </div>
+  
+    <div class="col-12 col-md-4 mb-4">
+      <label for="searchUser" class="form-label">{{ "posts.search.user.label" | translate }}</label>
+      <input class="form-control" type="search" name="searchUser" [placeholder]="'posts.search.user.placeholder' | translate" aria-label="Search by user"
+             [(ngModel)]="searchUser" (keyup)="searchPostsByUser()">
+    </div>
+  </div>
+
+  <div id="alert-search" class="alert alert-info col-lg-6 col-md-6 col-sm-12 py-2 mb-5 fw-bold" role="alert">
+    <i class="fa-solid fa-circle-info me-2"></i>
+    <span id="alert-search-text">{{ (posts$ | async)?.length }} {{ "themes.search.info" | translate }}</span>
+  </div>
+
+  <div class="row gy-3 col-sm-12">
+    <div *ngFor="let post of posts$ | async" class="col-12 animate__animated animate__fadeIn animate_slow">
+      <app-post-item [post]="post" (deletePost)="deletePost($event)"></app-post-item>
+    </div>
+  </div>
+</div>

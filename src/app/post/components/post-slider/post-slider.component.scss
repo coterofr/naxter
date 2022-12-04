@@ -1,0 +1,21 @@
+@import "src/styles";
+
+.swiper-container {
+  height: 25rem !important;
+  width: 100% !important;
+  padding-bottom: 4rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: $text-color !important;
+}
+
+.post-description {
+  background-color: $background-opacity-color !important;
+  bottom: 0 !important;
+  padding: 0.5rem 2rem !important;
+  position: absolute !important;
+  width: 100% !important;
+}

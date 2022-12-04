@@ -1,0 +1,48 @@
+<div class="container comment-list">
+
+  <div id="alert-comment" class="alert alert-success col-12 mt-5 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-comment-text"></span>
+  </div>
+
+  <div id="alert-delete" class="alert alert-success col-12 mt-5 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-delete-text"></span>
+  </div>
+
+  <form *ngIf="isConsumer" class="mt-4 animate__animated animate__fadeIn animate_slow" [formGroup]="commentForm" (ngSubmit)="add()">
+    <div class="row">
+      <div class="col-12">
+        <label for="content" class="form-label">{{ "comment.content.label" | translate }}</label>
+        <textarea type="text" [formControl]="content" class="form-control" [placeholder]="'comment.content.placeholder' | translate"
+                  [ngClass]="{'is-invalid': contentInvalid}" rows="3"></textarea>
+
+        <div *ngIf="content.errors">
+          <span *ngIf="contentInvalid" class="error">
+            <span *ngIf="content.errors['required']">{{ "comment.content.errors.required" | translate }}</span>
+            <span *ngIf="content.errors['minlength']">{{ "comment.content.errors.minlength" | translate }}</span>
+            <span *ngIf="content.errors['maxlength']">{{ "comment.content.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!commentForm.valid"
+          data-bs-toggle="tooltip" data-bs-placement="top" title="">
+          <i class="fa-solid fa-comment me-1"></i>
+          <span>{{ "comment.buttons.add" | translate }}</span>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div *ngIf="comments" class="card-group w-100 mt-3">
+    <div class="row gy-5 col-sm-12">
+      <div *ngFor="let comment of comments" class="col-12 animate__animated animate__fadeIn animate_slow">
+        <app-comment-item [comment]="comment" (deleteComment)="deleteComment($event)"></app-comment-item>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,623 @@
+{
+  "generic": {
+    "unspecified": "Sin especificar",
+    "buttons": {
+      "return": "Volver",
+      "cancel": "Cancel"
+    }
+  },
+
+  "header": {
+    "title": "Naxter",
+    "nav": {
+      "home": "Naxter",
+      "posts": "Publicaciones",
+      "profiles": "Perfiles",
+      "merchandising": "Merchandising",
+      "admin": "Administración",
+      "users": "Usuarios",
+      "login": "Iniciar",
+      "register": "Registrarse",
+      "account": "Cuenta",
+      "profile": "Perfil",
+      "logout": "Cerrar"
+    },
+    "search": {
+      "placeholder": "Buscar publicación...",
+      "button": "Buscar"
+    },
+    "language": {
+      "title": "Idioma",
+      "spanish": "Español",
+      "english": "Inglés"
+    }
+  },
+
+  "footer": {
+    "app": "Naxter",
+    "features": "Características",
+    "faqs": "FAQs",
+    "about": "Sobre",
+    "platform": "Plataforma",
+    "home": "Home",
+    "posts": "Publicaciones",
+    "profiles": "Perfiles",
+    "start": "Comienza",
+    "return": "Vuelva pronto",
+    "login": "Iniciar",
+    "register": "Registrarse",
+    "logout": "Cerrar",
+    "search": {
+      "title": "Encuentra tus publicaciones",
+      "subtitle": "Miles de publicaciones se suben diariamente.",
+      "label": "Buscar publicación",
+      "placeholder": "Buscar publicación...",
+      "button": "Buscar"
+    }
+  },
+
+  "login": {
+    "title": "Inicio de sesión",
+    "name": {
+      "label": "Usuario: ",
+      "placeholder": "Introduzca el usuario...",
+      "errors": {
+        "required": "El usuario es obligatorio",
+        "minlength": "El usuario debe tener 5 caracteres como mínimo",
+        "maxlength": "El usuario debe tener 25 caracteres como máximo"
+      }
+    },
+    "password": {
+      "label": "Contraseña: ",
+      "placeholder": "Introduzca la contraseña...",
+      "errors": {
+        "required": "La contraseña es obligatoria",
+        "minlength": "La contraseña debe tener 5 caracteres como mínimo",
+        "maxlength": "La contraseña debe tener 50 caracteres como máximo"
+      }
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "tooltip": "Create a platform account"
+    },
+    "button": {
+      "title": "Iniciar sesión",
+      "tooltip": "Iniciar sesión en la plataforma"
+    },
+    "logged": "Inicio de sesión realizado correctamente",
+    "errors": {
+      "title": "Error en el inicio de sesión",
+      "messageError": "Introduzca el usuario y contraseña correctamente",
+      "messageBlock": "Tu cuenta esta bloqueada, por favor contacte con un administrador de la plataforma"
+    }
+  },
+
+  "register": {
+    "title": "Registro",
+    "name": {
+      "label": "Usuario: ",
+      "placeholder": "Introduzca el usuario...",
+      "errors": {
+        "required": "El usuario es obligatorio",
+        "minlength": "El usuario debe tener 5 caracteres como mínimo",
+        "maxlength": "El usuario debe tener 25 caracteres como máximo"
+      }
+    },
+    "email": {
+      "label": "Email: ",
+      "placeholder": "Introduzca el email...",
+      "errors": {
+        "required": "El email es obligatorio",
+        "format": "El email debe tener un formato adecuado",
+        "minlength": "El email debe tener 10 caracteres como mínimo",
+        "maxlength": "El email debe tener 50 caracteres como máximo"
+      }
+    },
+    "userName": {
+      "label": "Nombre: ",
+      "placeholder": "Introduzca el nombre y apellidos...",
+      "errors": {
+        "required": "El nombre es obligatorio",
+        "minlength": "El nombre debe tener 5 caracteres como mínimo",
+        "maxlength": "El nombre debe tener 50 caracteres como máximo"
+      }
+    },
+    "password": {
+      "label": "Contraseña: ",
+      "placeholder": "Introduzca la contraseña...",
+      "errors": {
+        "required": "La contraseña es obligatoria",
+        "minlength": "La contraseña debe tener 5 caracteres como mínimo",
+        "maxlength": "La contraseña debe tener 50 caracteres como máximo"
+      }
+    },
+    "button": {
+      "title": "Registrase",
+      "tooltip": "Registrarse en la plataforma"
+    },
+    "registered": "Usuario registrado correctamente",
+    "errors": {
+      "title": "Error en el registro de la cuenta",
+      "messageError": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo",
+      "messageExists": "Un usuario ya existe con ese usuario o email"
+    }
+  },
+
+  "account": {
+    "title": "Mi cuenta de perfil",
+    "visits": "Visitas: ",
+    "role": "Rol: ",
+    "rating": "Valoración: ",
+    "changeRole": "Permitir suscribirse a los creadores de contenido y valorar y comentar sus publicaciones",
+    "name": {
+      "label": "Usuario: ",
+      "placeholder": "Introduzca el usuario...",
+      "errors": {
+        "required": "El usuario es obligatorio",
+        "minlength": "El usuario debe tener 5 caracteres como mínimo",
+        "maxlength": "El usuario debe tener 25 caracteres como máximo"
+      }
+    },
+    "email": {
+      "label": "Email: ",
+      "placeholder": "Introduzca el email...",
+      "errors": {
+        "required": "El email es obligatorio",
+        "format": "El email debe tener un formato adecuado",
+        "minlength": "El email debe tener 10 caracteres como mínimo",
+        "maxlength": "El email debe tener 50 caracteres como máximo"
+      }
+    },
+    "userName": {
+      "label": "Nombre: ",
+      "placeholder": "Introduzca el nombre y apellidos...",
+      "errors": {
+        "required": "El nombre es obligatorio",
+        "minlength": "El nombre debe tener 5 caracteres como mínimo",
+        "maxlength": "El nombre debe tener 50 caracteres como máximo"
+      }
+    },
+    "description": {
+      "label": "Descripción: ",
+      "placeholder": "Introduzca la descripción...",
+      "errors": {
+        "maxlength": "La descripción debe tener 500 caracteres como máximo"
+      }
+    },
+    "dateBirth": {
+      "label": "Fecha de nacimiento: ",
+      "placeholder": "Introduzca la fecha de nacimiento...",
+      "errors": {
+        "format": "La fecha de nacimiento debe tener el formato adecuado"
+      }
+    },
+    "buttons": {
+      "save": {
+        "title": "Guardar",
+        "tooltip": "Guardar cambios de mi perfil"
+      },
+      "delete": {
+        "title": "Eliminar cuenta",
+        "tooltip": "Eliminar mi cuenta de perfil"
+      },
+      "return": {
+        "title": "Ir a perfiles",
+        "tooltip": "Ir a la sección de perfiles"
+      }
+    },
+    "saved": "Perfil actualizado correctamente",
+    "confirmDelete": {
+      "title": "Confirmación de eliminación de cuenta de perfil",
+      "message": "¿Está seguro de que quiere borrar su cuenta de perfil?"
+    },
+    "deleted": "Eliminación de cuenta de perfil realizada correctamente",
+    "errors": {
+      "title": "Error en la actualización del perfil",
+      "messageError": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo",
+      "messageExists": "Un usuario ya existe con ese usuario o email"
+    }
+  },
+
+  "home": {
+    "title": "Naxter",
+    "welcome": "Bienvenido ",
+    "slider": "Publicaciones más destacas",
+    "subscriptions": "Tus suscripciones",
+    "posts": "Publicaciones destacadas de "
+  },
+
+  "themes": {
+    "title": "Mis temas",
+    "link": "Gestionar mis temas",
+    "unspecified": "Descripción sin especificar",
+    "search": {
+      "label": "Buscar: ",
+      "placeholder": "Buscar temas por nombre...",
+      "info": "tema/s del usuario encontrado/s",
+      "errors": {
+        "notFound": "No se ha encontrado ningún tema con ese nombre"
+      }
+    },
+    "buttons": {
+      "new": "Nuevo",
+      "delete": "Eliminar",
+      "edit": "Editar",
+      "detail": "Detalle"
+    }
+  },
+
+  "theme": {
+    "title": "Tema",
+    "name": {
+      "label": "Nombre: ",
+      "placeholder": "Introduzca el nombre...",
+      "errors": {
+        "required": "El nombre es obligatorio",
+        "minlength": "El nombre debe tener 5 caracteres como mínimo",
+        "maxlength": "El nombre debe tener 25 caracteres como máximo"
+      }
+    },
+    "description": {
+      "label": "Descripción: ",
+      "placeholder": "Introduzca la descripción...",
+      "errors": {
+        "maxlength": "La descripción debe tener 500 caracteres como máximo"
+      }
+    },
+    "buttons": {
+      "save": {
+        "title": "Guardar",
+        "tooltip": "Guardar cambios de mi tema"
+      },
+      "delete": {
+        "title": "Eliminar",
+        "tooltip": "Eliminar mi tema"
+      },
+      "return": {
+        "title": "Volver",
+        "tooltip": "Volver a la sección de mis temas"
+      }
+    },
+    "created": "Tema creado correctamente",
+    "updated": "Tema actualizado correctamente",
+    "confirmDelete": {
+      "title": "Confirmación de eliminación del tema",
+      "message": "¿Está seguro de que quiere borrar su tema?"
+    },
+    "deleted": "Eliminación del tema realizada correctamente",
+    "errors": {
+      "titleCreated": "Error en la creación del tema",
+      "titleUpdated": "Error en la actualización del tema",
+      "messageError": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo",
+      "messageExists": "Un tema ya existe con ese nombre"
+    }
+  },
+
+  "posts": {
+    "title": "Publicaciones",
+    "search": {
+      "theme": {
+        "label": "Tema:",
+        "placeholder": "Buscar publicación por tema..."
+      },
+      "name": {
+        "label": "Nombre:",
+        "placeholder": "Buscar publicación por nombre..."
+      },
+      "user": {
+        "label": "Autor",
+        "placeholder": "Buscar publicación por autor..."
+      },
+      "info": "publicación/es encontrada/s"
+    },
+    "buttons": {
+      "new": "Nuevo",
+      "edit": "Editar",
+      "detail": "Detalle",
+      "delete": "Eliminar"
+    }
+  },
+
+  "post": {
+    "title": "Publicación",
+    "name": {
+      "label": "Nombre: ",
+      "placeholder": "Introduzca el nombre...",
+      "errors": {
+        "required": "El nombre es obligatorio",
+        "minlength": "El nombre debe tener 5 caracteres como mínimo",
+        "maxlength": "El nombre debe tener 25 caracteres como máximo"
+      }
+    },
+    "theme": {
+      "title": "Tema",
+      "label": "Tema: ",
+      "placeholder": "Selecciona un tema...",
+      "errors": {
+        "required": "El tema es obligatorio",
+        "minlength": "El tema debe tener 5 caracteres como mínimo",
+        "maxlength": "El tema debe tener 25 caracteres como máximo"
+      }
+    },
+    "description": {
+      "title": "Descripción",
+      "label": "Descripción: ",
+      "placeholder": "Introduzca la descripción...",
+      "errors": {
+        "required": "La descripción es obligatoria",
+        "minlength": "La descripción debe tener 5 caracteres como mínimo",
+        "maxlength": "La descripción debe tener 500 caracteres como máximo"
+      }
+    },
+    "author": "Autor",
+    "rating": "Valoración de la publicación",
+    "rate": "Valora esta publicación!",
+    "buttons": {
+      "save": {
+        "title": "Guardar",
+        "tooltip": "Guardar cambios de mi publicación"
+      },
+      "add": {
+        "title": "Añadir",
+        "tooltip": "Añadir etiqueta a mi publicación"
+      },
+      "delete": {
+        "title": "Eliminar",
+        "tooltip": "Eliminar mi publicación"
+      },
+      "return": {
+        "title": "Volver",
+        "tooltip": "Volver a la sección de mis publicaciones"
+      }
+    },
+    "created": "Publicación creada correctamente",
+    "updated": "Publicación actualizada correctamente",
+    "confirmDelete": {
+      "title": "Confirmación de eliminación de la publicación",
+      "message": "¿Está seguro de que quiere borrar su publicación?"
+    },
+    "deleted": "Eliminación de la publicación realizada correctamente",
+    "errors": {
+      "titleCreated": "Error en la creación de la publicación",
+      "titleUpdated": "Error en la actualización de la publicación",
+      "titleDeleted": "Error en la eliminación de la publicación",
+      "message": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo"
+    },
+    "rated": "Su valoración ha sido incorporada correctamente, la media de valoración ha pasado de {{ oldValue }} a {{ newValue }}",
+
+    "tags": {
+      "title": "Etiquetas",
+      "name": {
+        "title": "Etiqueta",
+        "label": "Etiqueta: ",
+        "placeholder": "Introduzca el nombre...",
+        "errors": {
+          "required": "El nombre es obligatorio",
+          "minlength": "El nombre debe tener 5 caracteres como mínimo",
+          "maxlength": "El nombre debe tener 25 caracteres como máximo"
+        }
+      },
+      "description": {
+        "title": "Descripción",
+        "label": "Descripción: ",
+        "placeholder": "Introduzca la descripción..."
+      },
+      "added": "Etiqueta añadida correctamente",
+      "deleted": "Etiqueta eliminada correctamente",
+      "delete": "Eliminar",
+      "errors": {
+        "titleAdded": "Error en la adición de la etiqueta",
+        "titleDeleted": "Error en la eliminación de la etiqueta",
+        "message": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo"
+      }
+    }
+  },
+
+  "comment": {
+    "title": "Comentario",
+    "content": {
+      "label": "Comentario: ",
+      "placeholder": "Añade un comentario...",
+      "errors": {
+        "required": "El comentario es obligatorio",
+        "minlength": "El comentario debe tener 1 caracteres como mínimo",
+        "maxlength": "El comentario debe tener 500 caracteres como máximo"
+      }
+    },
+    "buttons": {
+      "add": "Comentar",
+      "edit": "Actualizar",
+      "delete": "Eliminar"
+    },
+    "confirmDelete": {
+      "title": "Confirmación de eliminación del comentario",
+      "message": "¿Está seguro de que quiere borrar el comentario?"
+    },
+    "added": "Comentario añadido correctamente",
+    "updated": "Comentario actualizado correctamente",
+    "deleted": "Eliminación del comentario realizada correctamente",
+    "errors": {
+      "titleAdded": "Error en la adición del comentario",
+      "titleUpdated": "Error en la actualización del comentario",
+      "titleDeleted": "Error en la eliminación del comentario",
+      "message": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo"
+    }
+  },
+
+  "profiles": {
+    "title": "Perfiles",
+    "unspecified": "Descripción sin especificar",
+    "subscribed": "Suscripción realizada correctamente",
+    "unsubscribed": "Desuscripción realizada correctamente",
+    "search": {
+      "label": "Buscar: ",
+      "placeholder": "Buscar perfiles por usuario...",
+      "info": "perfil/es de usuario encontrado/s",
+      "errors": {
+        "notFound": "No se ha encontrado ningún perfil con ese usuario"
+      }
+    },
+    "buttons": {
+      "view": "Ver",
+      "subscribe": "Susc.",
+      "unsubscribe": "Desusc."
+    }
+  },
+
+  "profile": {
+    "title": "Perfil",
+    "subscribed": "Suscripción realizada correctamente",
+    "unsubscribed": "Desuscripción realizada correctamente",
+    "badges": {
+      "subscribed": "Suscrito",
+      "notsubscribed": "No suscrito"
+    },
+    "name": "Usuario: ",
+    "email": "Email: ",
+    "userName": "Nombre: ",
+    "description": "Descripción: ",
+    "dateBirth": "Fecha de nacimiento: ",
+    "rating": "Valoración",
+    "buttons": {
+      "subscribe": "Suscribirse",
+      "unsubscribe": "Desuscribirse"
+    }
+  },
+
+  "chat": {
+    "title": "Chat",
+    "message": {
+      "label": "Mensaje: ",
+      "placeholder": "Envía un mensaje...",
+      "errors": {
+        "required": "El mensaje es obligatorio",
+        "minlength": "El mensaje debe tener 1 caracteres como mínimo",
+        "maxlength": "El mensaje debe tener 250 caracteres como máximo"
+      },
+      "sended": "Mensaje enviado correctamente"
+    },
+    "buttons": {
+      "chat": {
+        "title": "Chat",
+        "tooltip": "Acceder al chat"
+      },
+      "send": {
+        "title": "Enviar",
+        "tooltip": "Enviar mensaje"
+      }
+    },
+    "errors": {
+      "title": "Error en el envío del mensaje",
+      "message": "Se ha producido un error en el envío del mensaje, por favor inténtelo de nuevo"
+    }
+  },
+
+  "merchandising": {
+    "title": "Merchandising"
+  },
+
+  "admin": {
+    
+    "users": {
+      "title": "Usuarios",
+      "name": "Usuario",
+      "email": "Email",
+      "userName": "Nombre",
+      "role": "Rol",
+      "block": "Bloqueado",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "blocked": "Usuario bloqueado correctamente",
+      "unblocked": "Usuario desbloqueado correctamente",
+      "confirmDelete": {
+        "title": "Confirmación de eliminación de usuario",
+        "message": "¿Está seguro de que quiere borrar el usuario {{ user }}?"
+      },
+      "deleted": "Eliminación de usuario realizada correctamente",
+      "roles": {
+        "generic": "Genérico",
+        "consumer": "Consumidor",
+        "moderator": "Moderador",
+        "producer": "Productor",
+        "admin": "Administrador"
+      }
+    },
+
+    "user": {
+      "title": "Configuración de",
+      "subtitle": "Ficha de usuario",
+      "name": {
+        "label": "Usuario: ",
+        "placeholder": "Introduzca el usuario...",
+        "errors": {
+          "required": "El usuario es obligatorio",
+          "minlength": "El usuario debe tener 5 caracteres como mínimo",
+          "maxlength": "El usuario debe tener 25 caracteres como máximo"
+        }
+      },
+      "role": {
+        "label": "Rol: ",
+        "placeholder": "Seleccione un rol...",
+        "errors": {
+          "required": "Debe seleccionar un rol",
+          "minlength": "El rol debe tener 5 caracteres como mínimo",
+          "maxlength": "El rol debe tener 50 caracteres como máximo"
+        }
+      },
+      "email": {
+        "label": "Email: ",
+        "placeholder": "Introduzca el email...",
+        "errors": {
+          "required": "El email es obligatorio",
+          "format": "El email debe tener un formato adecuado",
+          "minlength": "El email debe tener 10 caracteres como mínimo",
+          "maxlength": "El email debe tener 50 caracteres como máximo"
+        }
+      },
+      "userName": {
+        "label": "Nombre: ",
+        "placeholder": "Introduzca el nombre y apellidos...",
+        "errors": {
+          "required": "El nombre es obligatorio",
+          "minlength": "El nombre debe tener 5 caracteres como mínimo",
+          "maxlength": "El nombre debe tener 50 caracteres como máximo"
+        }
+      },
+      "badges": {
+        "block": "Usuario bloqueado",
+        "unblock": "Usuario no bloqueado"
+      },
+      "buttons": {
+        "block": {
+          "title": "Bloquear",
+          "tooltip": "Bloquear usuario"
+        },
+        "unblock": {
+          "title": "Desbloquear",
+          "tooltip": "Desbloquear usuario"
+        },
+        "delete": {
+          "title": "Eliminar",
+          "tooltip": "Eliminar usuario"
+        },
+        "save": {
+          "title": "Guardar",
+          "tooltip": "Guardar configuración de usuario"
+        }
+      },
+      "blocked": "Usuario bloqueado correctamente",
+      "unblocked": "Usuario desbloqueado correctamente",
+      "configurated": "Usuario configurado correctamente",
+      "confirmDelete": {
+        "title": "Confirmación de eliminación de usuario",
+        "message": "¿Está seguro de que quiere borrar el usuario {{ user }}?"
+      },
+      "deleted": "Eliminación de usuario realizada correctamente",
+      "errors": {
+        "title": "Error en la configuración del usuario",
+        "messageError": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo",
+        "messageExists": "Un usuario ya existe con ese usuario o email"
+      }
+    }
+  }
+}

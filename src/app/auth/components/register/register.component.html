@@ -1,0 +1,78 @@
+<div class="container container-card-center">
+
+  <div id="alert-register" class="alert alert-success col-lg-6 col-md-8 col-sm-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-register-text"></span>
+  </div>
+
+  <div class="card bg-dark border-secondary p-2 card-center col-lg-6 col-md-8 col-sm-12 animate__animated animate__fadeInRight animate__fast">
+    <div class="card-body">
+      <h1 class="card-title pt-3 pb-4">{{ "register.title" | translate }}</h1>
+
+      <form class="my-3" [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="col-12 mb-3">
+          <label for="name" class="form-label">{{ "register.name.label" | translate }}</label>
+          <input type="text" [formControl]="name" class="form-control" [placeholder]="'register.name.placeholder' | translate"
+                 [ngClass]="nameInvalid ? 'is-invalid' : ''"/>
+
+          <div *ngIf="name.errors">
+            <span *ngIf="nameInvalid" class="error">
+              <span *ngIf="name.errors['required']">{{ "register.name.errors.required" | translate }}</span>
+              <span *ngIf="name.errors['minlength']">{{ "register.name.errors.minlength" | translate }}</span>
+              <span *ngIf="name.errors['maxlength']">{{ "register.name.errors.maxlength" | translate }}</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <label for="email" class="form-label">{{ "register.email.label" | translate }}</label>
+          <input type="email" [formControl]="email" class="form-control" [placeholder]="'register.email.placeholder' | translate"
+                 [ngClass]="emailInvalid ? 'is-invalid' : ''"/>
+
+          <div *ngIf="email.errors">
+            <span *ngIf="emailInvalid" class="error">
+              <span *ngIf="email.errors['required']">{{ "register.email.errors.required" | translate }}</span>
+              <div *ngIf="email.errors['pattern']">{{ "register.email.errors.format" | translate }}</div>
+              <span *ngIf="email.errors['minlength']">{{ "register.email.errors.minlength" | translate }}</span>
+              <span *ngIf="email.errors['maxlength']">{{ "register.email.errors.maxlength" | translate }}</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <label for="userName" class="form-label">{{ "register.userName.label" | translate }}</label>
+          <input type="text" [formControl]="userName" class="form-control" [placeholder]="'register.userName.placeholder' | translate"
+                 [ngClass]="userNameInvalid ? 'is-invalid' : ''"/>
+
+          <div *ngIf="userName.errors">
+            <span *ngIf="userNameInvalid" class="error">
+              <span *ngIf="userName.errors['required']">{{ "register.userName.errors.required" | translate }}</span>
+              <span *ngIf="userName.errors['minlength']">{{ "register.userName.errors.minlength" | translate }}</span>
+              <span *ngIf="userName.errors['maxlength']">{{ "register.userName.errors.maxlength" | translate }}</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+          <label for="password" class="form-label">{{ "register.password.label" | translate }}</label>
+          <input type="password" [formControl]="password" class="form-control" [placeholder]="'register.password.placeholder' | translate"
+                 [ngClass]="passwordInvalid ? 'is-invalid' : ''"/>
+
+          <div *ngIf="password.errors">
+            <span *ngIf="passwordInvalid" class="error">
+              <span *ngIf="password.errors['required']">{{ "register.password.errors.required" | translate }}</span>
+              <span *ngIf="password.errors['minlength']">{{ "register.password.errors.minlength" | translate }}</span>
+              <span *ngIf="password.errors['maxlength']">{{ "register.password.errors.maxlength" | translate }}</span>
+            </span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!registerForm.valid"
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Registrarse en la plataforma">
+          <i class="fa-solid fa-download me-1"></i>
+          <span>{{ "register.button.title" | translate }}</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+@import "src/styles";
+
+.message-container {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+%message {
+  position: relative !important;
+  width: fit-content;
+  padding: .2rem 1.5rem !important;
+  font-size: 1rem !important;
+  border-radius: .5rem !important;
+}
+
+%message-emitter-color {
+  color: $background-color !important;
+  background-color: $shadow-light-color !important;
+}
+
+.message-emitter {
+  @extend %message;
+  @extend %message-emitter-color;
+}
+
+.message-emitter::after {
+	content: "" !important;
+	position: absolute !important;
+  width: 1rem !important;
+	height: 1rem !important;
+  right: -1rem !important;
+	bottom: 20% !important;
+  background-color: $shadow-light-color !important;
+	clip-path: polygon(-5% 0, 70% 50%, -5% 100%) !important;
+}
+
+%message-receiver-color {
+  color: $background-color !important;
+  background-color: $principal-color !important;
+}
+
+.message-receiver {
+  @extend %message;
+  @extend %message-receiver-color;
+}
+
+.message-receiver::after {
+	content: "" !important;
+	position: absolute !important;
+  width: 1rem !important;
+	height: 1rem !important;
+  left: -1rem !important;
+	bottom: 20% !important;
+	background-color: $principal-color !important;
+	clip-path: polygon(105% 0, 105% 100%, 30% 50%) !important;
+}
+
+.message-date {
+  padding-top: .5rem !important;
+  color: $shadow-color !important;
+  font-size: .8rem !important;
+}

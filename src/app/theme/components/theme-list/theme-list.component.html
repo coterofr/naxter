@@ -1,0 +1,33 @@
+<div class="container card-group">
+  <div class="col-12">
+    <h1 class="d-inline-block">{{ "themes.title" | translate }}</h1>
+
+    <a class="btn btn-outline-success mt-4 float-end" role="button" [routerLink]="['/themes/new']"
+      data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fa-solid fa-plus me-1"></i>
+      <span>{{ "themes.buttons.new" | translate }}</span>
+    </a>
+    
+    <a class="btn btn-outline-primary mt-4 me-3 float-end" role="button" [routerLink]="['/posts/list']">
+      <i class="fa-solid fa-arrow-rotate-left me-1"></i>
+      <span>{{ "generic.buttons.return" | translate }}</span>
+    </a>
+  </div>
+
+  <div class="col-12 mb-4">
+    <label for="search" class="form-label">{{ "themes.search.label" | translate }}</label>
+    <input class="form-control" type="search" name="search" [placeholder]="'themes.search.placeholder' | translate" aria-label="Search"
+           [(ngModel)]="search" (keyup)="searchThemes()">
+  </div>
+
+  <div id="alert-search" class="alert alert-info col-lg-6 col-md-6 col-sm-12 py-2 mb-5 fw-bold" role="alert">
+    <i class="fa-solid fa-circle-info me-2"></i>
+    <span id="alert-search-text">{{ (themes$ | async)?.length }} {{ "themes.search.info" | translate }}</span>
+  </div>
+
+  <div class="row gy-3 col-sm-12">
+    <div *ngFor="let theme of themes$ | async" class="col-12 animate__animated animate__fadeIn animate_slow">
+      <app-theme-item [theme]="theme"></app-theme-item>
+    </div>
+  </div>
+</div>

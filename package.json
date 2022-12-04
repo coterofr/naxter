@@ -1,0 +1,57 @@
+{
+  "name": "naxter-frontend",
+  "version": "0.0.0",
+  "engines": {
+    "node": "16.17.0",
+    "npm": "8.15.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "init": "ng serve -o",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "start": "node server.js",
+    "heroku-postbuild": "ng build --configuration production"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.2.0",
+    "@angular/cli": "~14.2.3",
+    "@angular/common": "^14.2.0",
+    "@angular/compiler": "^14.2.0",
+    "@angular/compiler-cli": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/forms": "^14.2.0",
+    "@angular/platform-browser": "^14.2.0",
+    "@angular/platform-browser-dynamic": "^14.2.0",
+    "@angular/router": "^14.2.0",
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "@popperjs/core": "^2.11.6",
+    "@sweetalert2/theme-dark": "^5.0.12",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.2.1",
+    "express": "^4.18.2",
+    "jquery": "^3.6.1",
+    "ng-starrating": "^1.0.20",
+    "path": "^0.12.7",
+    "rxjs": "~7.5.0",
+    "sweetalert2": "^11.5.2",
+    "swiper": "^6.5.0",
+    "tslib": "^2.3.0",
+    "typescript": "~4.7.2",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.2.3",
+    "@types/jasmine": "~4.0.0",
+    "jasmine-core": "~4.3.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0"
+  }
+}

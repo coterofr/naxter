@@ -1,0 +1,27 @@
+@import "src/styles";
+
+.chat-container {
+  padding-bottom: 3rem !important;
+  overflow: hidden !important;
+}
+
+.chat-title {
+  padding-bottom: .5rem !important;
+}
+
+.messages-list {
+  @extend %box-shadow;
+  height: 30rem !important;
+  padding: 1rem !important;
+  border: 1px solid $shadow-color !important;
+  border-radius: 1rem !important;
+  overflow-y: scroll;
+}
+
+.message-success {
+  font-size: 1rem !important;
+}
+
+.form-chat {
+  padding-top: 1rem !important;
+}

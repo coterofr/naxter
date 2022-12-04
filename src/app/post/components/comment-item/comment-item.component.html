@@ -1,0 +1,50 @@
+<div class="card card-item bg-dark border-secondary p-1">
+  <div class="card-body p-2 position-relative">
+    <div class="position-absolute top-0 end-0">
+      <a *ngIf="canEdit" class="btn btn-outline-success not-border my-2 me-2" role="button" (click)="editMode = !editMode">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </a>
+
+      <a *ngIf="canDelete" class="btn btn-outline-danger not-border my-2 me-2" role="button" (click)="delete()">
+        <i class="fa-solid fa-trash-can"></i>
+      </a>
+    </div>
+
+    <h5>
+      <span class="badge badge-warning bg-warning text-dark mb-2 float-start">{{ comment.user?.name }}</span>
+    </h5>
+
+    <p *ngIf="!canEdit || !editMode" [ngClass]="canEdit || canDelete ? 'mt-5' : 'mt-2'" class="card-description text-justify mb-2">{{ comment.content }}</p>
+
+    <div *ngIf="canEdit && editMode">
+
+      <form class="mt-5 animate__animated animate__fadeIn animate_slow" [formGroup]="commentForm" (ngSubmit)="update()">
+        <div class="row">
+          <div class="col-12">
+            <label for="content" class="form-label">{{ "comment.content.label" | translate }}</label>
+            <textarea type="text" [formControl]="content" class="form-control" [placeholder]="'comment.content.placeholder' | translate"
+                   [ngClass]="{'is-invalid': contentInvalid}" rows="5"></textarea>
+    
+            <div *ngIf="content.errors">
+              <span *ngIf="contentInvalid" class="error">
+                <span *ngIf="content.errors['required']">{{ "comment.content.errors.required" | translate }}</span>
+                <span *ngIf="content.errors['minlength']">{{ "comment.content.errors.minlength" | translate }}</span>
+                <span *ngIf="content.errors['maxlength']">{{ "comment.content.errors.maxlength" | translate }}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!commentForm.valid"
+          data-bs-toggle="tooltip" data-bs-placement="top" title="">
+          <i class="fas fa-sync me-1"></i>
+          <span>{{ "comment.buttons.edit" | translate }}</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="mt-2 float-start">
+      <p class="form-label label-sm mb-0">{{ comment.date | date: 'dd-MM-yyyy hh:mm:ss' }}</p>
+    </div>
+  </div>
+</div>

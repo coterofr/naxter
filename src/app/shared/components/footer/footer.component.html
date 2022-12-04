@@ -1,0 +1,98 @@
+<div class="container">
+  <footer class="py-5 text-dark">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>{{ "footer.app" | translate }}</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted" [routerLink]="[]">{{ "footer.features" | translate }}</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted" [routerLink]="[]">{{ "footer.faqs" | translate }}</a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted"  [routerLink]="[]">{{ "footer.about" | translate }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>{{ "footer.platform" | translate }}</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted" [routerLink]="['/posts/home']">{{ "footer.home" | translate }}</a>
+          </li>
+          <li *ngIf="isLogged" class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted" [routerLink]="['/posts/list']">{{ "footer.posts" | translate }}</a>
+          </li>
+          <li *ngIf="isLogged" class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted" [routerLink]="['/profiles/list']">{{ "footer.profiles" | translate }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <ng-container *ngIf="isLogged; then back; else start"></ng-container>
+        <ng-template #back>
+
+          <h5>{{ "footer.return" | translate }}</h5>
+
+        </ng-template>
+        <ng-template #start>
+
+          <h5>{{ "footer.start" | translate }}</h5>
+
+        </ng-template>
+
+        <ul class="nav flex-column">
+          <li *ngIf="!isLogged" class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted" [routerLink]="['/auth/login']">{{ "footer.login" | translate }}</a>
+          </li>
+          <li *ngIf="!isLogged" class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted" [routerLink]="['/auth/register']">{{ "footer.register" | translate }}</a>
+          </li>
+          <li *ngIf="isLogged" class="nav-item mb-2">
+            <a class="nav-link p-0 text-muted pointer" [routerLink]="[]" (click)="logout()">{{ "footer.logout" | translate }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>{{ "footer.search.title" | translate }}</h5>
+          <p>{{ "footer.search.subtitle" | translate }}</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="search" class="visually-hidden">{{ "footer.search.label" | translate }}</label>
+            <input id="search" type="text" class="form-control" [placeholder]="'footer.search.placeholder' | translate" disabled>
+            <button class="btn btn-info disabled" type="button"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar publicaciones">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span class="d-none">{{ "footer.search.button" | translate }}</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>&copy; Carlos Otero Franjo, 2023 Naxter Platform, All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3">
+          <a class="link-secondary" [routerLink]="[]">
+            <i class="fa-brands fa-instagram social-media-icon"></i>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a class="link-secondary" [routerLink]="[]">
+            <i class="fa-brands fa-twitter social-media-icon"></i>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a class="link-secondary" [routerLink]="[]">
+            <i class="fa-brands fa-facebook-f social-media-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</div>

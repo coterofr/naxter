@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>{{ "home.title" | translate }}</h1>
+
+  <h2 class="welcome-title">
+    <span>{{ "home.welcome" | translate }}</span>
+    <span *ngIf="loggedUser" class="fw-bold">{{ loggedUser }}!</span>
+  </h2>
+
+  <div *ngIf="posts">
+    <h2 class="slider-title">{{ "home.slider" | translate }}</h2>
+    <app-post-slider [posts]="posts"></app-post-slider>
+  </div>
+
+  <div *ngIf="authors && authors.length > 0" class="subscriptions">
+    <h2 class="subscriptions-title">{{ "home.subscriptions" | translate }}</h2>
+    <app-post-subscription *ngFor="let author of authors" [author]="author"></app-post-subscription>
+  </div>
+</div>

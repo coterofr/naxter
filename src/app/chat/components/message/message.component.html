@@ -1,0 +1,6 @@
+<div class="message-container d-flex flex-row" [ngClass]="isEmitter ? 'justify-content-end' : 'justify-content-start'">
+  <div class="d-flex flex-column" [ngClass]="isEmitter ? 'message-emitter' : 'message-receiver'">
+    <div class="text-justify">{{ message.message }}</div>
+    <div class="label-sm message-date" [ngClass]="isEmitter ? 'ms-auto' : 'me-auto'">{{ message.date | date: 'dd-MM-yyyy hh:mm:ss' }}</div>
+  </div>
+</div>

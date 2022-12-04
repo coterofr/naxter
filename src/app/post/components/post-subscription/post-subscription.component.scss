@@ -1,0 +1,23 @@
+@import "src/styles";
+
+.subscription {
+  padding-bottom: 2rem !important;
+}
+
+.card-item {
+  @extend %box-shadow;
+  height: 100%;
+  width: 100%;
+}
+
+.author {
+  padding-bottom: 1rem !important;
+}
+
+.card-description {
+  margin-bottom: 3rem !important;
+}
+
+.card-button {
+  padding: 0.3rem 1rem !important;
+}

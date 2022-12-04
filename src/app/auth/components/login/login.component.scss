@@ -1,0 +1,6 @@
+@import "src/styles";
+
+.container-card-center {
+  @extend %container-card;
+  padding-bottom: 20rem !important;
+}

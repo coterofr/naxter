@@ -1,0 +1,138 @@
+<div class="container">
+  <h1>{{ "admin.user.title" | translate }} {{ user.userName }}</h1>
+
+  <div class="container-card-center">
+    <div id="alert-block" class="alert alert-success col-lg-6 col-md-8 col-sm-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+      <i class="fa-solid fa-circle-check me-2"></i>
+      <span id="alert-block-text"></span>
+    </div>
+
+    <div id="alert-config" class="alert alert-success col-lg-6 col-md-8 col-sm-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+      <i class="fa-solid fa-circle-check me-2"></i>
+      <span id="alert-config-text"></span>
+    </div>
+
+    <div id="alert-delete" class="alert alert-success col-lg-6 col-md-8 col-sm-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+      <i class="fa-solid fa-circle-check me-2"></i>
+      <span id="alert-delete-text"></span>
+    </div>
+
+    <div class="card bg-dark border-secondary p-2 card-center col-lg-6 col-md-8 col-sm-12 animate__animated animate__fadeIn animate_slow">
+      <ng-container *ngIf="user.block; then blocked; else unblocked"></ng-container>
+      <ng-template #blocked>
+
+        <h5>
+          <span class="badge badge-warning bg-warning text-dark float-end">{{ "admin.user.badges.block" | translate }}</span>
+        </h5>
+
+      </ng-template>
+      <ng-template #unblocked>
+
+        <h5>
+          <span class="badge badge-success bg-success float-end">{{ "admin.user.badges.unblock" | translate }}</span>
+        </h5>
+
+      </ng-template>
+
+      <div class="card-body">
+        <h1 class="card-title container-card-title pt-3 pb-4">{{ "admin.user.subtitle" | translate }}</h1>
+
+        <form class="my-3" [formGroup]="configForm" (ngSubmit)="config()">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <label for="name" class="form-label">{{ "admin.user.name.label" | translate }}</label>
+              <input type="text" [formControl]="name" class="form-control" [placeholder]="'admin.user.name.placeholder' | translate"
+                     [ngClass]="nameInvalid ? 'is-invalid' : ''"/>
+
+              <div *ngIf="name.errors">
+                <span *ngIf="nameInvalid" class="error">
+                  <span *ngIf="name.errors['required']">{{ "admin.user.name.errors.required" | translate }}</span>
+                  <span *ngIf="name.errors['minlength']">{{ "admin.user.name.errors.minlength" | translate }}</span>
+                  <span *ngIf="name.errors['maxlength']">{{ "admin.user.name.errors.maxlength" | translate }}</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label for="role" class="form-label">{{ "admin.user.role.label" | translate }}</label>
+              <select class="form-select" aria-label="Roles" [formControl]="role" [ngClass]="roleInvalid ? 'is-invalid' : ''">
+                <option value="" disabled>{{ "admin.user.role.placeholder" | translate }}</option>
+                <option [value]="item.key" *ngFor="let item of roles | keyvalue" [selected]="role.value === item.value">{{ item.value }}</option>
+              </select>
+
+              <div *ngIf="role.errors">
+                <span *ngIf="roleInvalid" class="error">
+                <span *ngIf="role.errors['required']">{{ "admin.user.role.errors.required" | translate }}</span>
+                <span *ngIf="role.errors['minlength']">{{ "admin.user.role.errors.minlength" | translate }}</span>
+                <span *ngIf="role.errors['maxlength']">{{ "admin.user.role.errors.maxlength" | translate }}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="email" class="form-label">{{ "admin.user.email.label" | translate }}</label>
+            <input type="email" [formControl]="email" class="form-control" [placeholder]="'admin.user.email.placeholder' | translate"
+                   [ngClass]="emailInvalid ? 'is-invalid' : ''"/>
+
+            <div *ngIf="email.errors">
+              <span *ngIf="emailInvalid" class="error">
+                <span *ngIf="email.errors['required']">{{ "admin.user.email.errors.required" | translate }}</span>
+                <div *ngIf="email.errors['pattern']">{{ "admin.user.email.errors.format" | translate }}</div>
+                <span *ngIf="email.errors['minlength']">{{ "admin.user.email.errors.minlength" | translate }}</span>
+                <span *ngIf="email.errors['maxlength']">{{ "admin.user.email.errors.maxlength" | translate }}</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="userName" class="form-label">{{ "admin.user.userName.label" | translate }}</label>
+            <input type="text" [formControl]="userName" class="form-control" [placeholder]="'admin.user.userName.placeholder' | translate"
+                   [ngClass]="userNameInvalid ? 'is-invalid' : ''"/>
+
+            <div *ngIf="userName.errors">
+              <span *ngIf="userNameInvalid" class="error">
+                <span *ngIf="userName.errors['required']">{{ "admin.user.userName.errors.required" | translate }}</span>
+                <span *ngIf="userName.errors['minlength']">{{ "admin.user.userName.errors.minlength" | translate }}</span>
+                <span *ngIf="userName.errors['maxlength']">{{ "admin.user.userName.errors.maxlength" | translate }}</span>
+              </span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!configForm.valid"
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Guardar configuración de usuario">
+            <i class="fa-solid fa-download me-1"></i>
+            <span>{{ "admin.user.buttons.save.title" | translate }}</span>
+          </button>
+
+          <button type="button" class="btn btn-outline-danger my-3 me-3 float-end"
+                  [disabled]="user.name === userLogged" (click)="delete(user.name)"
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar usuario">
+            <i class="fa-solid fa-trash-can me-1"></i>
+            <span>{{ "admin.user.buttons.delete.title" | translate }}</span>
+          </button>
+
+          <button type="button" class="btn btn-outline-success my-3 me-3 float-end"
+                  [ngClass]="!user.block ? 'd-none' : ''" [disabled]="user.name === userLogged" (click)="block(user.name)"
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Desbloquear usuario">
+            <i class="fa-solid fa-lock-open me-1"></i>
+            <span>{{ "admin.user.buttons.unblock.title" | translate }}</span>
+          </button>
+
+          <button type="button" class="btn btn-outline-warning my-3 me-3 float-end"
+                  [ngClass]="user.block ? 'd-none' : ''" [disabled]="user.name === userLogged" (click)="block(user.name)"
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Bloquear usuario">
+            <i class="fa-solid fa-lock me-1"></i>
+            <span>{{ "admin.user.buttons.block.title" | translate }}</span>
+          </button>
+
+          <a class="btn btn-outline-primary my-3 me-3 float-end" role="button" [routerLink]="isModerator ? ['/users/list'] : ['/posts/home']"
+             data-bs-toggle="tooltip" data-bs-placement="top" title="">
+            <i class="fa-solid fa-arrow-rotate-left me-1"></i>
+            <span>{{ "generic.buttons.return" | translate }}</span>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

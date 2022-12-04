@@ -1,0 +1,20 @@
+@import "src/styles";
+
+.card-item {
+  @extend %box-shadow;
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 1rem !important;
+  background-color: $background-light-color !important;
+}
+
+.card-body::after {
+	content: "" !important;
+	position: absolute !important;
+	height: 3rem !important;
+	width: 3rem !important;
+	bottom: -2rem !important;
+	left: 80% !important;
+	background-color: $background-light-color !important;
+	clip-path: polygon(0 0, 100% 0, 100% 100%) !important;
+}

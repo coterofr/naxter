@@ -1,0 +1,15 @@
+@import "src/styles";
+
+.card-item {
+  @extend %box-shadow;
+  height: 100%;
+  width: 100%;
+}
+
+.tag-list {
+  margin-top: 1rem !important;
+}
+
+.card-description {
+  margin-bottom: 5rem !important;
+}
