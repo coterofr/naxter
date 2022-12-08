@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { catchError, firstValueFrom, Observable, share, startWith, Subject, switchMap, throwError } from 'rxjs';
 import { JwtTokenService } from 'src/app/auth/services/jwt-token.service';
 import { AlertService } from 'src/app/shared/services/alert.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { Message } from '../../model/message';
 import { ChatService } from '../../services/chat.service';
@@ -77,7 +78,9 @@ export class ChatComponent implements OnInit, OnDestroy {
     });
 
     this.getMessages();
-    this.getMessagesPeriodically();
+    if(environment.reloadMessagesPeriodically) {
+      this.getMessagesPeriodically();
+    }
     this.scrollLastMessage();
   }
 
@@ -92,7 +95,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   private scrollLastMessage() {
-    setTimeout(()=> this.chatMessages.scrollTop = this.chatMessages.scrollHeight, 5000);
+    setTimeout(()=> this.chatMessages.scrollTop = this.chatMessages.scrollHeight, 1000);
   }
 
   private reloadMessages() {
@@ -102,16 +105,16 @@ export class ChatComponent implements OnInit, OnDestroy {
   private getMessagesPeriodically(): void {
     this.messagesPeriod = setInterval(async() => {
       if(this.chat.messages) {
-        /* const numMessagesBefore = this.chat.messages.length;
+        const numMessagesBefore = this.chat.messages.length;
         await this.getChat();
-        const numMessagesAfter = this.chat.messages.length; */
+        const numMessagesAfter = this.chat.messages.length;
         this.reloadMessages();
 
-        /* if(numMessagesBefore < numMessagesAfter) {
+        if(numMessagesBefore < numMessagesAfter) {
           this.scrollLastMessage();
-        } */
+        }
       }
-    }, 30000);
+    }, 10000);
   }
 
   get message(): FormControl {
