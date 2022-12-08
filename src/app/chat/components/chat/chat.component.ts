@@ -51,7 +51,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.messagesPeriod);
+    // clearInterval(this.messagesPeriod);
   }
 
   private enableTooltips(): void {
@@ -77,7 +77,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     });
 
     this.getMessages();
-    this.getMessagesPeriodically();
+    // this.getMessagesPeriodically();
     this.scrollLastMessage();
   }
 
