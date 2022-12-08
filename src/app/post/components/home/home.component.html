@@ -6,7 +6,7 @@
     <span *ngIf="loggedUser" class="fw-bold">{{ loggedUser }}!</span>
   </h2>
 
-  <div *ngIf="posts">
+  <div *ngIf="posts && posts.length > 0">
     <h2 class="slider-title">{{ "home.slider" | translate }}</h2>
     <app-post-slider [posts]="posts"></app-post-slider>
   </div>

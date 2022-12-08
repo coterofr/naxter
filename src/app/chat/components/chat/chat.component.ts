@@ -92,7 +92,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   private scrollLastMessage() {
-    setTimeout(()=> this.chatMessages.scrollTop = this.chatMessages.scrollHeight, 2000);
+    setTimeout(()=> this.chatMessages.scrollTop = this.chatMessages.scrollHeight, 5000);
   }
 
   private reloadMessages() {
@@ -111,7 +111,7 @@ export class ChatComponent implements OnInit, OnDestroy {
           this.scrollLastMessage();
         }
       }
-    }, 10000);
+    }, 20000);
   }
 
   get message(): FormControl {

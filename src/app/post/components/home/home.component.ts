@@ -39,16 +39,20 @@ export class HomeComponent implements OnInit {
       this.posts = posts
     });
 
-    if(this.isLogged && this.loggedUser) {
+    if(this.isLogged && this.loggedUser&& this.isConsumer) {
       this.userService.getSubscribedAuthors(this.loggedUser).subscribe((authors: User[]) => this.authors = authors);
     }
+  }
+
+  get isLogged(): boolean {
+    return this.jwtTokenService.isLogged();
   }
 
   get loggedUser(): string | null {
     return this.jwtTokenService.getName();
   }
 
-  get isLogged(): boolean {
-    return this.jwtTokenService.isLogged();
-  } 
+  get isConsumer(): boolean {
+    return this.jwtTokenService.isConsumer();
+  }
 }
