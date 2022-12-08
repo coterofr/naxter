@@ -38,7 +38,11 @@
     </div>
   </form>
 
-  <div *ngIf="comments" class="card-group w-100 mt-3">
+  <div *ngIf="loading" class="row col-12 animate__animated animate__fadeIn animate_slow">
+    <app-loading></app-loading>
+  </div>
+
+  <div *ngIf="!loading && comments" class="card-group w-100 mt-3">
     <div class="row gy-5 col-sm-12">
       <div *ngFor="let comment of comments" class="col-12 animate__animated animate__fadeIn animate_slow">
         <app-comment-item [comment]="comment" (deleteComment)="deleteComment($event)"></app-comment-item>

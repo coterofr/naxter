@@ -25,7 +25,11 @@
     <span id="alert-search-text">{{ (themes$ | async)?.length }} {{ "themes.search.info" | translate }}</span>
   </div>
 
-  <div class="row gy-3 col-sm-12">
+  <div *ngIf="loading || (themes$ | async) === null" class="row col-12 animate__animated animate__fadeIn animate_slow">
+    <app-loading></app-loading>
+  </div>
+
+  <div *ngIf="!loading" class="row gy-3 col-sm-12">
     <div *ngFor="let theme of themes$ | async" class="col-12 animate__animated animate__fadeIn animate_slow">
       <app-theme-item [theme]="theme"></app-theme-item>
     </div>

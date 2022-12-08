@@ -25,7 +25,8 @@ export class ProfileListComponent implements OnInit {
   
   users$: Observable<User[]> = new Observable<User[]>();
   search: string = "";
-
+  loading: boolean = true;
+  
   totalStars: number = 10;
   readonly: boolean = true;
 
@@ -39,7 +40,11 @@ export class ProfileListComponent implements OnInit {
     this.users$ = this.searchProfile.pipe(startWith(this.search),
                                           debounceTime(500),
                                           distinctUntilChanged(),
-                                          switchMap((query: any) => this.profileService.searchProfiles(query)),
+                                          switchMap((query: any) => {
+                                            this.loading = false;
+
+                                            return this.profileService.searchProfiles(query)
+                                          }),
                                           share());
   }
 
@@ -76,6 +81,7 @@ export class ProfileListComponent implements OnInit {
   }
 
   searchProfiles() {
+    this.loading = true;
     this.searchProfile.next(this.search);
   }
 

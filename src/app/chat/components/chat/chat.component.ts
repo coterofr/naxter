@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -18,12 +18,13 @@ declare var bootstrap: any;
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, OnDestroy {
 
   private displayMessages: Subject<string> = new Subject();
   private chatMessage: ChatMessage;
   private user1: string = '';
   private chatMessages: any;
+  private messagesPeriod: any;
   
   chat: Chat;
   user2: string = '';
@@ -47,6 +48,10 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     this.enableTooltips();
     this.initData();
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.messagesPeriod);
   }
 
   private enableTooltips(): void {
@@ -87,7 +92,7 @@ export class ChatComponent implements OnInit {
   }
 
   private scrollLastMessage() {
-    setTimeout(()=> this.chatMessages.scrollTop = this.chatMessages.scrollHeight, 1000);
+    setTimeout(()=> this.chatMessages.scrollTop = this.chatMessages.scrollHeight, 2000);
   }
 
   private reloadMessages() {
@@ -95,7 +100,7 @@ export class ChatComponent implements OnInit {
   }
 
   private getMessagesPeriodically(): void {
-    const interval = setInterval(async() => {
+    this.messagesPeriod = setInterval(async() => {
       if(this.chat.messages) {
         const numMessagesBefore = this.chat.messages.length;
         await this.getChat();
@@ -106,7 +111,7 @@ export class ChatComponent implements OnInit {
           this.scrollLastMessage();
         }
       }
-    }, 100000);
+    }, 10000);
   }
 
   get message(): FormControl {

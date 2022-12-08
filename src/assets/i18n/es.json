@@ -4,7 +4,8 @@
     "buttons": {
       "return": "Volver",
       "cancel": "Cancel"
-    }
+    },
+    "loading": "Cargando..."
   },
 
   "header": {

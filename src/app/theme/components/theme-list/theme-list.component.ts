@@ -18,6 +18,7 @@ export class ThemeListComponent implements OnInit {
   
   themes$: Observable<Theme[]> = new Observable<Theme[]>();
   search: string = "";
+  loading: boolean = true;
 
   constructor(private themeService: ThemeService,
               private jwtTokenService: JwtTokenService) {
@@ -25,7 +26,11 @@ export class ThemeListComponent implements OnInit {
     this.themes$ = this.searchTheme.pipe(startWith(this.search),
                                          debounceTime(500),
                                          distinctUntilChanged(),
-                                         switchMap((query: any) => this.themeService.searchThemes(this.name, query)),
+                                         switchMap((query: any) => {
+                                          this.loading = false;
+
+                                          return this.themeService.searchThemes(this.name, query);
+                                         }),
                                          share());
   }
 
@@ -43,6 +48,7 @@ export class ThemeListComponent implements OnInit {
   }
 
   searchThemes() {
+    this.loading = true;
     this.searchTheme.next(this.search);
   }
 }

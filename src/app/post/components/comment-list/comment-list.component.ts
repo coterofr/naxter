@@ -25,6 +25,7 @@ export class CommentListComponent implements OnInit {
   
   comments: Comment[];
   commentForm: FormGroup;
+  loading: boolean = true;
 
   constructor(private fb: FormBuilder,
               private commentService: CommentService,
@@ -51,7 +52,11 @@ export class CommentListComponent implements OnInit {
   }
 
   initData(): void {
-    this.commentService.getComments(this.post.id).subscribe((comments: Comment[]) => this.comments = comments);
+    this.commentService.getComments(this.post.id).subscribe((comments: Comment[]) => {
+      this.loading = false;
+
+      this.comments = comments
+    });
   }
 
   private initForm() {

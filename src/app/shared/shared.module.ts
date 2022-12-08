@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoadingComponent } from './components/loading/loading.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { CutTextPipe } from './pipes/cut-text.pipe';
 
@@ -13,7 +14,8 @@ import { CutTextPipe } from './pipes/cut-text.pipe';
     HeaderComponent,
     FooterComponent,
     PaginationComponent,
-    CutTextPipe
+    LoadingComponent,
+    CutTextPipe,
   ],
   imports: [
     CommonModule,
@@ -22,10 +24,11 @@ import { CutTextPipe } from './pipes/cut-text.pipe';
     TranslateModule
   ],
   exports: [
-      HeaderComponent,
-      FooterComponent,
-      PaginationComponent,
-      CutTextPipe
+    HeaderComponent,
+    FooterComponent,
+    PaginationComponent,
+    LoadingComponent,
+    CutTextPipe
   ]
 })
 export class SharedModule { }

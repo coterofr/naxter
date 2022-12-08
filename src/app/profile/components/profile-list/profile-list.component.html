@@ -17,7 +17,11 @@
     <span id="alert-search-text">{{ (users$ | async)?.length }} {{ "profiles.search.info" | translate }}</span>
   </div>
 
-  <div class="row g-4 col-sm-12">
+  <div *ngIf="loading || (users$ | async) === null" class="row col-12 animate__animated animate__fadeIn animate_slow">
+    <app-loading></app-loading>
+  </div>
+
+  <div *ngIf="!loading" class="row g-4 col-sm-12">
     <div *ngFor="let user of users$ | async" class="col-lg-4 col-md-6 col-12 animate__animated animate__fadeIn animate_slow">
       <div class="card card-item bg-dark border-secondary p-1">
         <div class="card-body position-relative">

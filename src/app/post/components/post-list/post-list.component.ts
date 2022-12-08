@@ -22,6 +22,7 @@ export class PostListComponent implements OnInit {
   searchTheme: string = '';
   searchName: string = '';
   searchUser: string = '';
+  loading: boolean = true;
 
   constructor(private postService: PostService,
               private jwtTokenService: JwtTokenService,
@@ -30,7 +31,11 @@ export class PostListComponent implements OnInit {
     this.posts$ = this.searchPost.pipe(startWith(''),
                                        debounceTime(500),
                                        distinctUntilChanged(),
-                                       switchMap((query: any) => this.postService.searchPosts(this.searchTheme, this.searchName, this.searchUser)),
+                                       switchMap((query: any) => {
+                                        this.loading = false;
+
+                                        return this.postService.searchPosts(this.searchTheme, this.searchName, this.searchUser);
+                                        }),
                                        share());
   }
 
@@ -52,14 +57,17 @@ export class PostListComponent implements OnInit {
   }
 
   searchPostsByTheme() {
+    this.loading = true;
     this.searchPost.next(this.searchTheme);
   }
 
   searchPostsByName() {
+    this.loading = true;
     this.searchPost.next(this.searchName);
   }
 
   searchPostsByUser() {
+    this.loading = true;
     this.searchPost.next(this.searchUser);
   }
 
