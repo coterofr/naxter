@@ -102,14 +102,14 @@ export class ChatComponent implements OnInit, OnDestroy {
   private getMessagesPeriodically(): void {
     this.messagesPeriod = setInterval(async() => {
       if(this.chat.messages) {
-        const numMessagesBefore = this.chat.messages.length;
+        /* const numMessagesBefore = this.chat.messages.length;
         await this.getChat();
-        const numMessagesAfter = this.chat.messages.length;
+        const numMessagesAfter = this.chat.messages.length; */
         this.reloadMessages();
 
-        if(numMessagesBefore < numMessagesAfter) {
+        /* if(numMessagesBefore < numMessagesAfter) {
           this.scrollLastMessage();
-        }
+        } */
       }
     }, 30000);
   }
