@@ -24,10 +24,13 @@ export class AlertService {
                   message: string): Promise<void> {
     this.element = document.getElementById(alert);
     this.textElement = document.getElementById(textAlert);
+
     if(this.element && this.textElement && success) {
       this.textElement.textContent = ConstApi.ALERT_ICON_SPACE + message;
       this.element.classList.remove('d-none');
+
       await this.wait(3000);
+      
       this.element.classList.add('d-none');
     }
   }

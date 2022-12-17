@@ -31,7 +31,7 @@
         <span>{{ "posts.buttons.edit" | translate }}</span>
       </a>
 
-      <a class="btn btn-outline-info my-3 me-3" role="button" [routerLink]="['/posts', post.id, 'detail']"
+      <a *ngIf="isConsumer" class="btn btn-outline-info my-3 me-3" role="button" [routerLink]="['/posts', post.id, 'detail']"
          data-bs-toggle="tooltip" data-bs-placement="top" title="">
         <i class="fa-solid fa-eye me-1"></i>
         <span>{{ "posts.buttons.detail" | translate }}</span>

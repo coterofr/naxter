@@ -14,7 +14,7 @@
       <span class="badge badge-warning bg-warning text-dark mb-2 float-start">{{ comment.user?.name }}</span>
     </h5>
 
-    <p *ngIf="!canEdit || !editMode" [ngClass]="canEdit || canDelete ? 'mt-5' : 'mt-2'" class="card-description text-justify mb-2">{{ comment.content }}</p>
+    <p *ngIf="!canEdit || !editMode" [ngClass]="canEdit || canDelete ? 'mt-5' : 'mt-5'" class="card-description text-justify mb-2">{{ comment.content }}</p>
 
     <div *ngIf="canEdit && editMode">
 
@@ -23,7 +23,7 @@
           <div class="col-12">
             <label for="content" class="form-label">{{ "comment.content.label" | translate }}</label>
             <textarea type="text" [formControl]="content" class="form-control" [placeholder]="'comment.content.placeholder' | translate"
-                   [ngClass]="{'is-invalid': contentInvalid}" rows="5"></textarea>
+                      [ngClass]="{'is-invalid': contentInvalid}" rows="5"></textarea>
     
             <div *ngIf="content.errors">
               <span *ngIf="contentInvalid" class="error">

@@ -4,11 +4,11 @@
       <div class="swiper-wrapper">
 
         <div *ngFor="let post of posts" class="swiper-slide"
-          [ngStyle]="{
-            'background-size': 'cover',
-            'background-position': 'top',
-            'background-image': 'url(assets/img/post-img.jpg)'
-          }">
+             [ngStyle]="{
+              'background-size': 'cover',
+              'background-position': 'top',
+              'background-image': 'url(assets/img/post-img.jpg)'
+             }">
 
           <div class="post-description">
             <h3>{{ post.name }}</h3>

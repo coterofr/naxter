@@ -20,9 +20,7 @@ export class PostSliderComponent implements OnInit, AfterViewInit {
   ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-    this.swiper = new Swiper('.swiper-container', { 
-      loop: true
-    });
+    this.swiper = new Swiper('.swiper-container', { loop: true });
 
     setTimeout(() => this.swiper.update(), 3500);
   }

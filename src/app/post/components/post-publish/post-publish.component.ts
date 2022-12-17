@@ -70,8 +70,10 @@ export class PostPublishComponent implements OnInit {
     if(paramMap.get('id')) {
       this.id = paramMap.get('id') as string;
       this.post = await firstValueFrom(this.postService.getPost(this.id));
+
       this.userPost = new UserPost(this.post.id, this.post.name, this.post.description, this.loggedUser, this.post.theme?.name as string, 
                                    this.post.tags ? this.post.tags?.map(tag => tag.name) : []);
+                                   
       this.tagService.getTags(this.id).subscribe((tagPageable: TagPageable) => this.tags = tagPageable.content);
     } else {
       this.userPost = new UserPost('', '', '', this.loggedUser, '', []);

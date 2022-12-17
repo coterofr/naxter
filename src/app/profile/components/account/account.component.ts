@@ -27,14 +27,13 @@ declare var bootstrap: any;
 export class AccountComponent implements OnInit {
 
   private account: Account;
+  private readonly ERROR_MESSAGE = 'exists';
   
   user: User;
   profileForm: FormGroup;
 
   totalStars: number = 10;
   readonly: boolean = true;
-
-  private readonly ERROR_MESSAGE = 'exists';
 
   constructor(private fb: FormBuilder,
               private userService: UserService,
@@ -69,6 +68,7 @@ export class AccountComponent implements OnInit {
   private async initForm(): Promise<void> {
     const name: string | null = this.jwtTokenService.getName() as string;
     this.user = await firstValueFrom(this.profileService.getAccount(name));
+    
     const profile: Profile = this.user.profile as Profile;
     this.account = new Account(this.user.name, this.user.email, this.user.userName, profile.description, profile.dateBirth, profile.visits, this.user.rating);
 

@@ -40,6 +40,10 @@ export class PostItemComponent implements OnInit {
     return this.jwtTokenService.getName() as string;
   }
 
+  get isConsumer(): boolean {
+    return this.jwtTokenService.isConsumer();
+  }
+
   get isModerator(): boolean {
     return this.jwtTokenService.isModerator();
   }

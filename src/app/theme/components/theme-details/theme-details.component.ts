@@ -59,6 +59,7 @@ export class ThemeDetailsComponent implements OnInit {
       this.update = true;
       this.id = paramMap.get('id') as string;
       this.theme = await firstValueFrom(this.themeService.getTheme(this.id));
+
       this.userTheme = new UserTheme(this.theme.name, this.theme.description, this.loggedUser);
     } else {
       this.update = false;
@@ -156,7 +157,7 @@ export class ThemeDetailsComponent implements OnInit {
     this.themeService.editTheme(this.userTheme.name, this.userTheme)
       .pipe(catchError(error => throwError(error)))
       .subscribe(async (theme: Theme) => {
-        this.theme =  theme;
+        this.theme = theme;
 
         await this.alertService.showAlert('alert-theme', 'alert-theme-text', true, this.translateService.instant('theme.updated'));
       },

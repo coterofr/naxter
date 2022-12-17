@@ -47,6 +47,7 @@ export class PostDetailsComponent implements OnInit {
   private async initData() {
     const paramMap: ParamMap = await firstValueFrom(this.route.paramMap);
     this.id = paramMap.get('id') as string;
+    
     const queryMap: ParamMap = await firstValueFrom(this.route.queryParamMap);
     this.home = queryMap.get('return') as string;     
 

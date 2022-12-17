@@ -13,9 +13,9 @@ export class ProducerGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): Observable<boolean | UrlTree> |
-                                          Promise<boolean | UrlTree> |
-                                          boolean |
-                                          UrlTree {
+                                           Promise<boolean | UrlTree> |
+                                           boolean |
+                                           UrlTree {
     if(!this.tokenService.isProducer()) {
       this.router.navigate(['/']);
 

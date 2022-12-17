@@ -68,6 +68,7 @@ export class UserListComponent implements OnInit {
 
   confirmDelete(name: string): void {
     Swal.fire({
+
       icon: 'question',
       title: this.translateService.instant('admin.users.confirmDelete.title'),
       text: this.translateService.instant('admin.users.confirmDelete.message', {user: name}),
@@ -78,6 +79,7 @@ export class UserListComponent implements OnInit {
       showCancelButton: true,
       cancelButtonText: this.translateService.instant('generic.buttons.cancel'),
       cancelButtonColor: '#0d6efd'
+      
     }).then(async (result) => {
       if(result.isConfirmed) {
         this.userService.deleteUser(name).subscribe(({ name: string }) => {

@@ -63,8 +63,10 @@ export class UserDetailsComponent implements OnInit {
 
   private async initForm(): Promise<void> {
     const paramMap: ParamMap = await firstValueFrom(this.route.paramMap);
+
     this.id = paramMap.get('id') as string;
     this.user = await firstValueFrom(this.userService.getUser(this.id));
+
     this.configUser = new ConfigUser(this.user.name, this.user.roles[0].type, this.user.email, this.user.userName);
 
     this.configForm = this.fb.group({
@@ -208,6 +210,7 @@ export class UserDetailsComponent implements OnInit {
 
   delete(name: string): void {
     Swal.fire({
+
       icon: 'question',
       title: this.translateService.instant('admin.user.confirmDelete.title'),
       text: this.translateService.instant('admin.user.confirmDelete.message', {user: name}),
@@ -218,6 +221,7 @@ export class UserDetailsComponent implements OnInit {
       showCancelButton: true,
       cancelButtonText: this.translateService.instant('generic.buttons.cancel'),
       cancelButtonColor: '#0d6efd'
+      
     }).then(async (result) => {
       if(result.isConfirmed) {
         this.userService.deleteUser(name).subscribe();

@@ -13,7 +13,6 @@ export class MessageComponent implements OnInit {
 
   @Input() message: Message;
 
-
   constructor(private jwtTokenService: JwtTokenService) {
     this.message = new Message('', null, null, '', null);
   }

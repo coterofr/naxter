@@ -35,7 +35,7 @@ export class PostListComponent implements OnInit {
                                         this.loading = false;
 
                                         return this.postService.searchPosts(this.searchTheme, this.searchName, this.searchUser);
-                                        }),
+                                       }),
                                        share());
   }
 

@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
       this.posts = posts
     });
 
-    if(this.isLogged && this.loggedUser&& this.isConsumer) {
+    if(this.isLogged && this.loggedUser && this.isConsumer) {
       this.userService.getSubscribedAuthors(this.loggedUser).subscribe((authors: User[]) => this.authors = authors);
     }
   }

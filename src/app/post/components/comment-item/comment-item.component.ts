@@ -106,7 +106,7 @@ export class CommentItemComponent implements OnInit {
     this.postComment.content = this.content?.value;
     if(this.comment.user && this.comment.post) {
       this.postComment.user = this.comment.user?.name;
-      this.postComment.post = this.comment.post?.name;
+      this.postComment.post = this.comment.post?.id;
     }
 
     this.commentService.editComment(this.postComment.post, this.postComment.id, this.postComment)
