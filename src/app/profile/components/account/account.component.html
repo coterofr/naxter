@@ -25,9 +25,15 @@
     </star-rating>
   </div>
 
-  <div *ngIf="!isProducer" class="form-check form-switch d-inline-block">
+  <div *ngIf="!isProducer" class="form-check form-switch d-inline-block mt-2">
     <label class="form-label label-lg">{{ "account.changeRole" | translate }}</label>
     <input class="form-check-input text-info pointer" type="checkbox" [checked]="isConsumer" (change)="changeGenericRole()" readonly
+           data-bs-toggle="tooltip" data-bs-placement="right" title="">
+  </div>
+
+  <div *ngIf="isProducer" class="form-check form-switch d-inline-block mt-2">
+    <label class="form-label label-lg">{{ "account.changeMerchandising" | translate }}</label>
+    <input class="form-check-input text-info pointer" type="checkbox" [checked]="user.merchandising" (change)="changeMerchandising()" readonly
            data-bs-toggle="tooltip" data-bs-placement="right" title="">
   </div>
 

@@ -24,6 +24,10 @@ const appRoutes: Routes = [
     loadChildren: () => import('./chat/chat.module').then((m) => m.ChatModule),
   },
   {
+    path: 'merchandising',
+    loadChildren: () => import('./merchandising/merchandising.module').then((m) => m.MerchandisingModule),
+  },
+  {
     path: 'users',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },

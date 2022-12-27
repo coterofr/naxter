@@ -41,7 +41,7 @@ export class UserDetailsComponent implements OnInit {
               private translateService: TranslateService,
               private route: ActivatedRoute,
               private router: Router) {
-    this.user = new User('', '', '', '', false, 0, [], null, null, null);
+    this.user = new User('', '', '', '', false, 0, [], null, null, false);
     this.configUser = new ConfigUser('', RoleEnum.GENERIC, '', '');
     this.configForm = this.fb.group({
       name: new FormControl(''),

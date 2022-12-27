@@ -1,0 +1,109 @@
+<div class="container">
+  <h1>{{ "product.title" | translate }}</h1>
+
+  <div id="alert-product" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-product-text"></span>
+  </div>
+
+  <div id="alert-delete" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-delete-text"></span>
+  </div>
+
+  <form id="productForm" class="mt-3 form-central animate__animated animate__fadeIn animate_slow" [formGroup]="productForm" (ngSubmit)="save()">
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="name" class="form-label">{{ "product.name.label" | translate }}</label>
+        <input type="text" [formControl]="name" class="form-control" [placeholder]="'product.name.placeholder' | translate"
+               [ngClass]="{'is-invalid': nameInvalid}"/>
+
+        <div *ngIf="name.errors">
+          <span *ngIf="nameInvalid" class="error">
+            <span *ngIf="name.errors['required']">{{ "product.name.errors.required" | translate }}</span>
+            <span *ngIf="name.errors['minlength']">{{ "product.name.errors.minlength" | translate }}</span>
+            <span *ngIf="name.errors['maxlength']">{{ "product.name.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <label for="merchandising" class="form-label">{{ "product.merchandising.label" | translate }}</label>
+        <input type="text" [formControl]="merchandising" class="form-control" [placeholder]="'product.merchandising.placeholder' | translate"
+               [ngClass]="{'is-invalid': merchandisingInvalid, 'disable': update}"/>
+
+        <div *ngIf="merchandising.errors">
+          <span *ngIf="merchandisingInvalid" class="error">
+            <span *ngIf="merchandising.errors['required']">{{ "product.merchandising.errors.required" | translate }}</span>
+            <span *ngIf="merchandising.errors['minlength']">{{ "product.merchandising.errors.minlength" | translate }}</span>
+            <span *ngIf="merchandising.errors['maxlength']">{{ "product.merchandising.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="price" class="form-label">{{ "product.price.label" | translate }}</label>
+        <input type="number" step="0.5" [formControl]="price" class="form-control" [placeholder]="'product.price.placeholder' | translate"
+               [ngClass]="{'is-invalid': priceInvalid}"/>
+
+        <div *ngIf="price.errors">
+          <span *ngIf="priceInvalid" class="error">
+            <span *ngIf="price.errors['required']">{{ "product.price.errors.required" | translate }}</span>
+            <span *ngIf="price.errors['min']">{{ "product.price.errors.min" | translate }}</span>
+            <span *ngIf="price.errors['max']">{{ "product.price.errors.max" | translate }}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mb-3">
+        <label for="stock" class="form-label">{{ "product.stock.label" | translate }}</label>
+        <input type="number" step="1" [formControl]="stock" class="form-control" [placeholder]="'product.stock.placeholder' | translate"
+               [ngClass]="{'is-invalid': stockInvalid}"/>
+
+        <div *ngIf="stock.errors">
+          <span *ngIf="stockInvalid" class="error">
+            <span *ngIf="stock.errors['required']">{{ "product.stock.errors.required" | translate }}</span>
+            <span *ngIf="stock.errors['min']">{{ "product.stock.errors.min" | translate }}</span>
+            <span *ngIf="stock.errors['max']">{{ "product.stock.errors.max" | translate }}</span>
+            <span *ngIf="stock.errors['pattern']">{{ "product.stock.errors.pattern" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mb-3">
+        <label for="description" class="form-label">{{ "product.description.label" | translate }}</label>
+        <textarea [formControl]="description" class="form-control" [placeholder]="'product.description.placeholder' | translate"
+                  [ngClass]="descriptionInvalid ? 'is-invalid' : ''" rows="10"></textarea>
+
+        <div *ngIf="description.errors">
+          <span *ngIf="descriptionInvalid" class="error">
+            <span *ngIf="description.errors['required']">{{ "product.description.errors.required" | translate }}</span>
+            <span *ngIf="description.errors['minlength']">{{ "product.description.errors.minlength" | translate }}</span>
+            <span *ngIf="description.errors['maxlength']">{{ "product.description.errors.maxlength" | translate }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-info my-3 float-end" [disabled]="!productForm.valid"
+        data-bs-toggle="tooltip" data-bs-placement="top" title="Guardar cambios de mi publicación">
+        <i class="fa-solid fa-download me-1"></i>
+        <span>{{ "product.buttons.save.title" | translate }}</span>
+    </button>
+  
+    <button *ngIf="id" type="button" class="btn btn-outline-danger my-3 me-3 float-end" (click)="delete()"
+        data-bs-toggle="tooltip" data-bs-placement="top" title="">
+        <i class="fa-solid fa-trash-can me-1"></i>
+        <span>{{ "product.buttons.delete.title" | translate }}</span>
+    </button>
+  
+    <a class="btn btn-outline-primary my-3 me-3 float-end" role="button" [routerLink]="['/merchandising/products']">
+      <i class="fa-solid fa-arrow-rotate-left me-1"></i>
+      <span>{{ "product.buttons.return.title" | translate }}</span>
+    </a>
+  </form>
+</div>

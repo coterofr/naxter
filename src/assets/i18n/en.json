@@ -150,6 +150,7 @@
     "role": "Role: ",
     "rating": "Rating: ",
     "changeRole": "Allow to subscribe to content creators and rate and comment on their posts",
+    "changeMerchandising": "Activate my merchandising section",
     "name": {
       "label": "User: ",
       "placeholder": "Enter the user...",
@@ -302,14 +303,14 @@
         "placeholder": "Search posts by theme..."
       },
       "name": {
-        "label": "Nombre:",
+        "label": "Name:",
         "placeholder": "Search posts by name..."
       },
       "user": {
         "label": "Autor",
         "placeholder": "Search posts by author..."
       },
-      "info": "post/es found"
+      "info": "post/s found"
     },
     "buttons": {
       "new": "New",
@@ -368,7 +369,7 @@
       },
       "return": {
         "title": "Return",
-        "tooltip": "Go to posts section"
+        "tooltip": "Return to posts section"
       }
     },
     "created": "Post created successfully",
@@ -514,7 +515,142 @@
   },
 
   "merchandising": {
-    "title": "Merchandising"
+    "title": "Merchandising",
+    "search": {
+      "merchandising": {
+        "label": "Merchandising areas:",
+        "placeholder": "Search posts by merchandising area..."
+      },
+      "name": {
+        "label": "Name:",
+        "placeholder": "Search posts by name..."
+      },
+      "user": {
+        "label": "Seller",
+        "placeholder": "Search posts by seller..."
+      },
+      "info": "product/s found"
+    },
+    "buttons": {
+      "new": "New",
+      "edit": "Edit",
+      "detail": "Details",
+      "delete": "Delete"
+    }
+  },
+
+  "product": {
+    "title": "Producto",
+    "name": {
+      "label": "Name: ",
+      "placeholder": "Enter the name...",
+      "errors": {
+        "required": "Name is required",
+        "minlength": "Name must be at least 5 characters",
+        "maxlength": "Name can be max 25 characters long"
+      }
+    },
+    "merchandising": {
+      "title": "Merchandising area",
+      "label": "Merchandising area: ",
+      "placeholder": "Enter the merchandising area...",
+      "errors": {
+        "required": "Merchandising area is required",
+        "minlength": "Merchandising area must be at least 5 characters",
+        "maxlength": "Merchandising area can be max 25 characters long"
+      }
+    },
+    "description": {
+      "title": "Description",
+      "label": "Description: ",
+      "placeholder": "Enter the description...",
+      "errors": {
+        "required": "Description is required",
+        "minlength": "Description must be at least 5 characters",
+        "maxlength": "Description can be max 500 characters long"
+      }
+    },
+    "price": {
+      "title": "Price",
+      "euros": "€",
+      "labelNormal": "Price: ",
+      "label": "Price (€): ",
+      "placeholder": "Enter the price...",
+      "errors": {
+        "required": "Price is required",
+        "min": "Price must be at least 0.5 €",
+        "max": "Price can be max 1000 €"
+      }
+    },
+    "stock": {
+      "title": "Stock",
+      "units": "unidades",
+      "label": "Stock: ",
+      "placeholder": "Enter the stock...",
+      "errors": {
+        "required": "Stock is required",
+        "min": "Stock must be at least 1 units",
+        "max": "Stock can be max 100 units",
+        "pattern": "Stock must have integer values"
+      }
+    },
+    "seller": "Seller",
+    "buttons": {
+      "save": {
+        "title": "Save",
+        "tooltip": "Save changes on my product"
+      },
+      "delete": {
+        "title": "Delete",
+        "tooltip": "Delete the product"
+      },
+      "return": {
+        "title": "Return",
+        "tooltip": "Return to merchandising section"
+      }
+    },
+    "created": "Product created successfully",
+    "updated": "Product updated successfully",
+    "added": "Successfully added product to cart",
+    "confirmDelete": {
+      "title": "Confirm delete product",
+      "message": "Are you sure you want to delete your product"
+    },
+    "deleted": "Successfully deleted product",
+    "removed": "Successfully removed product from cart",
+    "errors": {
+      "titleCreated": "Product created failed",
+      "titleUpdated": "Product updated failed",
+      "titleDeleted": "Product deleted failed",
+      "message": "There was an error sending the data, please try again"
+    }
+  },
+
+  "cart": {
+    "title": "My cart",
+    "price": "Total price: ",
+    "buttons": {
+      "add": {
+        "title": "Add",
+        "tooltip": "Add product to cart"
+      },
+      "remove": {
+        "title": "Remove",
+        "tooltip": "Remove product from cart"
+      },
+      "return": {
+        "title": "Return",
+        "tooltip": "Return to merchandising section"
+      }
+    },
+    "confirmRemove": {
+      "title": "Confirm delete product from cart",
+      "message": "Are you sure you want to remove the product from cart?"
+    },
+    "errors": {
+      "titleRemoved": "Product removed from cart failed",
+      "message": "There was an error sending the data, please try again"
+    }
   },
 
   "admin": {

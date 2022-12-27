@@ -150,6 +150,7 @@
     "role": "Rol: ",
     "rating": "Valoración: ",
     "changeRole": "Permitir suscribirse a los creadores de contenido y valorar y comentar sus publicaciones",
+    "changeMerchandising": "Activar mi sección de merchandising",
     "name": {
       "label": "Usuario: ",
       "placeholder": "Introduzca el usuario...",
@@ -514,7 +515,142 @@
   },
 
   "merchandising": {
-    "title": "Merchandising"
+    "title": "Merchandising",
+    "search": {
+      "merchandising": {
+        "label": "Áreas de merchandising:",
+        "placeholder": "Buscar producto por área de merchandising..."
+      },
+      "name": {
+        "label": "Nombre:",
+        "placeholder": "Buscar producto por nombre..."
+      },
+      "user": {
+        "label": "Vendedor",
+        "placeholder": "Buscar producto por vendendor..."
+      },
+      "info": "producto/s encontrado/s"
+    },
+    "buttons": {
+      "new": "Nuevo",
+      "edit": "Editar",
+      "detail": "Detalle",
+      "delete": "Eliminar"
+    }
+  },
+
+  "product": {
+    "title": "Producto",
+    "name": {
+      "label": "Nombre: ",
+      "placeholder": "Introduzca el nombre...",
+      "errors": {
+        "required": "El nombre es obligatorio",
+        "minlength": "El nombre debe tener 5 caracteres como mínimo",
+        "maxlength": "El nombre debe tener 25 caracteres como máximo"
+      }
+    },
+    "merchandising": {
+      "title": "Área de merchandising",
+      "label": "Área de merchandising: ",
+      "placeholder": "Introduzca la área de merchandising...",
+      "errors": {
+        "required": "La área de merchandising es obligatorio",
+        "minlength": "La área de merchandising es obligatorio debe tener 5 caracteres como mínimo",
+        "maxlength": "La área de merchandising es obligatorio debe tener 25 caracteres como máximo"
+      }
+    },
+    "description": {
+      "title": "Descripción",
+      "label": "Descripción: ",
+      "placeholder": "Introduzca la descripción...",
+      "errors": {
+        "required": "La descripción es obligatoria",
+        "minlength": "La descripción debe tener 5 caracteres como mínimo",
+        "maxlength": "La descripción debe tener 500 caracteres como máximo"
+      }
+    },
+    "price": {
+      "title": "Precio",
+      "euros": "€",
+      "labelNormal": "Precio: ",
+      "label": "Precio (€): ",
+      "placeholder": "Introduzca el precio...",
+      "errors": {
+        "required": "El precio es obligatorio",
+        "min": "El precio mínimo son 0.5 €",
+        "max": "El precio máximo son 1000 €"
+      }
+    },
+    "stock": {
+      "title": "Stock",
+      "units": "unidades",
+      "label": "Stock: ",
+      "placeholder": "Introduzca el stock...",
+      "errors": {
+        "required": "El stock es obligatorio",
+        "min": "El stock mínimo es 1 unidad",
+        "max": "El stock máximo son 100 unidades",
+        "pattern": "El stock debe de tener valores enteros"
+      }
+    },
+    "seller": "Vendedor",
+    "buttons": {
+      "save": {
+        "title": "Guardar",
+        "tooltip": "Guardar cambios de mi producto"
+      },
+      "delete": {
+        "title": "Eliminar",
+        "tooltip": "Eliminar mi producto"
+      },
+      "return": {
+        "title": "Volver",
+        "tooltip": "Volver a la sección de merchandising"
+      }
+    },
+    "created": "Producto creado correctamente",
+    "updated": "Producto actualizado correctamente",
+    "added": "Producto añadido del carrito correctamente",
+    "confirmDelete": {
+      "title": "Confirmación de eliminación del producto",
+      "message": "¿Está seguro de que quiere borrar su producto?"
+    },
+    "deleted": "Eliminación del producto realizado correctamente",
+    "removed": "Producto quitado del carrito correctamente",
+    "errors": {
+      "titleCreated": "Error en la creación del producto",
+      "titleUpdated": "Error en la actualización del producto",
+      "titleDeleted": "Error en la eliminación del producto",
+      "message": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo"
+    }
+  },
+
+  "cart": {
+    "title": "Mi carrito",
+    "price": "Precio total: ",
+    "buttons": {
+      "add": {
+        "title": "Añadir",
+        "tooltip": "Añadir el producto del carrito"
+      },
+      "remove": {
+        "title": "Quitar",
+        "tooltip": "Quitar el producto del carrito"
+      },
+      "return": {
+        "title": "Volver",
+        "tooltip": "Volver a la sección de merchandising"
+      }
+    },
+    "confirmRemove": {
+      "title": "Confirmación de eliminación del producto del carrito",
+      "message": "¿Está seguro de que quiere quitar el producto del carrito?"
+    },
+    "errors": {
+      "titleRemoved": "Error en la eliminación del producto del carrito",
+      "message": "Se ha producido un error en el envío de los datos, por favor inténtelo de nuevo"
+    }
   },
 
   "admin": {

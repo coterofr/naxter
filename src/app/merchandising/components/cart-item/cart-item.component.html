@@ -1,0 +1,20 @@
+<div class="card card-item bg-dark border-secondary p-1">
+  <div class="card-body position-relative">
+    <h2 class="card-title">{{ product.name }}</h2>
+
+    <p class="card-subtitle text-justify fw-bold my-3">{{ product.merchandising?.name }}</p>
+
+    <p class="form-label">{{ "product.price.labelNormal" | translate }}{{ product.price }} {{ "product.price.euros" | translate }}</p>
+    <p class="form-label">{{ "product.stock.label" | translate }}{{ product.stock }} {{ "product.stock.units" | translate }}</p>
+
+    <p *ngIf="product.description" class="card-description text-justify my-2">{{ product.description | cutText:200 }}</p>
+
+    <div class="position-absolute bottom-0 end-0">
+      <a class="btn btn-outline-danger my-3 me-3" role="button" (click)="remove()"
+         data-bs-toggle="tooltip" data-bs-placement="top" title="">
+        <i class="fa-solid fa-delete-left me-1"></i>
+        <span>{{ "cart.buttons.remove.title" | translate }}</span>
+      </a>
+    </div>
+  </div>
+</div>

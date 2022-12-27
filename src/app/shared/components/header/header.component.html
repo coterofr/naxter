@@ -35,8 +35,8 @@
             </a>
           </li>
 
-          <li *ngIf="isLogged" class="nav-item">
-            <a class="nav-link header-link disabled" [routerLink]="['/merchandising']" routerLinkActive="active" tabindex="-1" aria-disabled="true"
+          <li *ngIf="isConsumer" class="nav-item">
+            <a class="nav-link header-link" [routerLink]="['/merchandising/products']" routerLinkActive="active"
                data-bs-toggle="tooltip" data-bs-placement="left" title="">
               <i class="fa-solid fa-cart-shopping me-1"></i>
               <span>{{ "header.nav.merchandising" | translate }}</span>

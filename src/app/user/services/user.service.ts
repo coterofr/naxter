@@ -40,4 +40,8 @@ export class UserService {
   changeGenericRole(id: string): Observable<User> {
     return this.http.post<User>(UrlApi.generateUrl(UrlApi.BASIC, UrlApi.USERS, UrlApi.SLASH, id, UrlApi.SLASH, UrlApi.CHANGE_GENERIC_ROLE), id);
   }
+
+  changeMerchandising(id: string): Observable<User> {
+    return this.http.post<User>(UrlApi.generateUrl(UrlApi.BASIC, UrlApi.USERS, UrlApi.SLASH, id, UrlApi.SLASH, UrlApi.CHANGE_MERCHANDISING), id);
+  }
 }

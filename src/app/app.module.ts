@@ -34,9 +34,9 @@ import { UserModule } from './user/user.module';
     PostModule,
     ThemeModule,
     ProfileModule,
-    UserModule,
     ChatModule,
     MerchandisingModule,
+    UserModule,
     SharedModule
   ],
   providers: [

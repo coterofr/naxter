@@ -1,0 +1,72 @@
+<div class="container card-group">
+  <div class="col-12">
+    <h1 class="d-inline-block">{{ "merchandising.title" | translate }}</h1>
+
+    <a *ngIf="isConsumer" class="btn btn-outline-warning mt-4 float-end" role="button" [routerLink]="['/merchandising', loggedUser, 'cart']"
+       data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fa-solid fa-cart-shopping me-1"></i>
+      <span>{{ "cart.title" | translate }}</span>
+    </a>
+
+    <a *ngIf="isProducer && isMerchandisingActive" class="btn btn-outline-success mt-4 me-3 float-end" role="button" [routerLink]="['/merchandising/products/new']"
+       data-bs-toggle="tooltip" data-bs-placement="top" title="">
+      <i class="fa-solid fa-plus me-1"></i>
+      <span>{{ "merchandising.buttons.new" | translate }}</span>
+    </a>
+  </div>
+
+  <div id="alert-delete" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-delete-text"></span>
+  </div>
+
+  <div id="alert-add" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-add-text"></span>
+  </div>
+
+  <div id="alert-remove" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
+    <i class="fa-solid fa-circle-check me-2"></i>
+    <span id="alert-remove-text"></span>
+  </div>
+
+  <div class="row col-12">
+    <div class="col-12 col-md-4 mb-4">
+      <label for="searchMerchandising" class="form-label">{{ "merchandising.search.merchandising.label" | translate }}</label>
+      <select class="form-select" size="2" name="searchMerchandising" [(ngModel)]="searchMerchandising" multiple>
+        <option *ngFor="let merchandising of merchandisings" (click)="searchProductsByMerchandising()" [ngValue]="merchandising.name">{{ merchandising.name }}</option>
+      </select>
+    </div>
+  
+    <div class="col-12 col-md-4 mb-4">
+      <label for="searchName" class="form-label">{{ "merchandising.search.name.label" | translate }}</label>
+      <input class="form-control" type="search" name="searchName" [placeholder]="'merchandising.search.name.placeholder' | translate" aria-label="Search by name"
+             [(ngModel)]="searchName" (keyup)="searchProductsByName()">
+    </div>
+  
+    <div class="col-12 col-md-4 mb-4">
+      <label for="searchUser" class="form-label">{{ "merchandising.search.user.label" | translate }}</label>
+      <input class="form-control" type="search" name="searchUser" [placeholder]="'merchandising.search.user.placeholder' | translate" aria-label="Search by user"
+             [(ngModel)]="searchUser" (keyup)="searchProductsByUser()">
+    </div>
+  </div>
+
+  <div id="alert-search" class="alert alert-info col-lg-6 col-md-6 col-sm-12 py-2 mb-5 fw-bold" role="alert">
+    <i class="fa-solid fa-circle-info me-2"></i>
+    <span id="alert-search-text">{{ (products$ | async)?.length }} {{ "merchandising.search.info" | translate }}</span>
+  </div>
+
+  <div *ngIf="loading || (products$ | async) === null" class="row col-12 animate__animated animate__fadeIn animate_slow">
+    <app-loading></app-loading>
+  </div>
+
+  <div *ngIf="!loading" class="row gy-3 col-sm-12">
+    <div *ngFor="let product of products$ | async" class="col-lg-6 col-md-6 col-12 animate__animated animate__fadeIn animate_slow">
+      <app-product-item [product]="product" [cart]="cart" 
+                        (deleteProduct)="deleteProduct($event)"
+                        (addProductCart)="addProductCart($event)"
+                        (removeProductCart)="removeProductCart($event)">
+      </app-product-item>
+    </div>
+  </div>
+</div>

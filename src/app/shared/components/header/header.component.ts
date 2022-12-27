@@ -30,6 +30,10 @@ export class HeaderComponent implements OnInit {
     return this.jwtTokenService.getName();
   }
 
+  get isConsumer(): boolean {
+    return this.jwtTokenService.isConsumer();
+  }
+
   get isModerator(): boolean {
     return this.jwtTokenService.isModerator();
   }

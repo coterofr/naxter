@@ -44,7 +44,7 @@ export class AccountComponent implements OnInit {
               private alertService: AlertService,
               private translateService: TranslateService,
               private router: Router) {
-    this.user = new User('', '', '', '', false, 0, [], null, null, null);
+    this.user = new User('', '', '', '', false, 0, [], null, null, false);
     this.account = new Account('', '', '', '', new Date(), 0, 0);
     this.profileForm = this.fb.group({
       name: new FormControl(''),
@@ -168,6 +168,12 @@ export class AccountComponent implements OnInit {
       this.user = user
 
       this.refreshJwtToken();
+    });
+  }
+
+  changeMerchandising(): void {
+    this.userService.changeMerchandising(this.user.name).subscribe((user: User) => {
+      this.user = user
     });
   }
 

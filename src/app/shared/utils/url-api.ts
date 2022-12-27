@@ -10,6 +10,7 @@ export class UrlApi {
   public static ADD: string = 'add';
   public static BLOCK: string = 'block';
   public static DELETE: string = 'delete';
+  public static REMOVE: string = 'remove';
   public static SEARCH: string = 'search';
   public static LIST: string = 'list';
   public static TOP: string = 'top';
@@ -29,6 +30,7 @@ export class UrlApi {
   public static ROLE: string = 'role';
   public static VISIT: string = 'visit';
   public static CHANGE_GENERIC_ROLE: string = 'change-generic-role';
+  public static CHANGE_MERCHANDISING: string = 'change-merchandising';
 
   public static SUBSCRIPTIONS: string = 'subscriptions';
   public static SUBSCRIBER: string = 'subscriber';
@@ -46,7 +48,8 @@ export class UrlApi {
   public static MESSAGES: string = 'messages';
   
   public static MERCHANDASING: string = 'merchandising';
-  public static ITEMS: string = 'items';
+  public static PRODUCTS: string = 'products';
+  public static CART: string = 'cart';
 
   public static generateUrl(...params: string[]): string {
     return params.reduce((prev: string, actual: string) => prev + actual);

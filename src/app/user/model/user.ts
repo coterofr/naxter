@@ -1,4 +1,3 @@
-import { Merchandising } from '../../merchandising/model/merchandising';
 import { Profile } from '../../profile/model/profile';
 import { Theme } from '../../theme/model/theme';
 import { Role } from './role';
@@ -14,7 +13,7 @@ export class User {
   roles: Role[];
   profile: Profile | null;
   themes: Theme[] | null;
-  merchandising: Merchandising | null;
+  merchandising: boolean;
 
   constructor(email: string,
               name: string,
@@ -25,7 +24,7 @@ export class User {
               roles: Role[],
               profile: Profile | null,
               themes: Theme[] | null,
-              merchandising: Merchandising | null) {
+              merchandising: boolean) {
     this.email = email;
     this.name = name;
     this.userName = userName;

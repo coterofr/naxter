@@ -20,7 +20,7 @@ export class PostSubscriptionComponent implements OnInit {
   readonly: boolean = true;
 
   constructor(private postService: PostService) {
-    this.author = new User('', '', '', '', false, 0, [], null, null, null);
+    this.author = new User('', '', '', '', false, 0, [], null, null, false);
     this.posts = [];
   }
 

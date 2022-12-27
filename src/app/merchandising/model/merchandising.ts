@@ -1,19 +1,19 @@
-import { Item } from './item';
+import { User } from 'src/app/user/model/user';
 
 export class Merchandising {
 
-  id: string;
   name: string;
   description: string;
-  items: Item[];
+  user: User;
+  date: Date;
 
-  constructor(id: string,
-              name: string,
+  constructor(name: string,
               description: string,
-              items: Item[]) {
-    this.id = id;
+              user: User,
+              date: Date) {
     this.name = name;
     this.description = description;
-    this.items = items;
+    this.user = user;
+    this.date = date;
   }
 }
