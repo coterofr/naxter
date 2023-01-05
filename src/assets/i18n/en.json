@@ -629,6 +629,8 @@
   "cart": {
     "title": "My cart",
     "price": "Total price: ",
+    "added": "Added to cart",
+    "notAdded": "Not added to cart",
     "buttons": {
       "add": {
         "title": "Add",

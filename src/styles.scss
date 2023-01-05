@@ -51,11 +51,11 @@ thead {
 .link {
   text-decoration: none !important;
   color: $principal-color !important;
-  opacity: 0.7;
+  opacity: 0.7 !important;
 }
 
 .link:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .pointer {
@@ -68,7 +68,7 @@ thead {
 }
 
 .text-justify {
-  text-align: justify;
+  text-align: justify !important;
 }
 
 .alert {
@@ -128,5 +128,5 @@ thead {
 .badge-lg {
   font-size: 1rem !important;
   font-weight: 700 !important;
-  cursor: pointer;
+  cursor: pointer !important;
 }

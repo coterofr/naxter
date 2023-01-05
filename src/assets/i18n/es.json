@@ -629,6 +629,8 @@
   "cart": {
     "title": "Mi carrito",
     "price": "Precio total: ",
+    "added": "Añadido al carrito",
+    "notAdded": "No añadido al carrito",
     "buttons": {
       "add": {
         "title": "Añadir",

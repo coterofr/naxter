@@ -1,9 +1,24 @@
 <div class="container">
-  <h1 class="d-inline-block">{{ "product.title" | translate }}: {{ product.name }}</h1>
+  <div class="col-12">
+    <h1 class="d-inline-block">{{ "product.title" | translate }}: {{ product.name }}</h1>
 
-  <div id="alert-rating" class="alert alert-success col-12 mb-5 mx-auto fw-bold animate__animated animate__fadeIn d-none" role="alert">
-    <i class="fa-solid fa-circle-check me-2"></i>
-    <span id="alert-rating-text"></span>
+    <span *ngIf="inCart !== null" class="animate__animated animate__fadeIn animate_slow">
+      <ng-container *ngIf="inCart; then added; else notAdded"></ng-container>
+      <ng-template #added>
+    
+        <h5 class="d-inline-block float-end mt-4">
+          <span class="badge badge-success bg-success">{{ "cart.added" | translate }}</span>
+        </h5>
+    
+      </ng-template>
+      <ng-template #notAdded>
+    
+        <h5 class="d-inline-block float-end mt-4">
+          <span class="badge badge-warning bg-warning text-dark">{{ "cart.notAdded" | translate }}</span>
+        </h5>
+    
+      </ng-template>
+    </span>
   </div>
 
   <div class="product-central animate__animated animate__fadeIn animate_slow">

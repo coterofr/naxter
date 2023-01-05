@@ -61,9 +61,11 @@
         <form>
           <h5>{{ "footer.search.title" | translate }}</h5>
           <p>{{ "footer.search.subtitle" | translate }}</p>
+          
           <div class="d-flex flex-column flex-sm-row w-100 gap-2">
             <label for="search" class="visually-hidden">{{ "footer.search.label" | translate }}</label>
             <input id="search" type="text" class="form-control" [placeholder]="'footer.search.placeholder' | translate" disabled>
+            
             <button class="btn btn-info disabled" type="button"
                     data-bs-toggle="tooltip" data-bs-placement="top" title="Buscar publicaciones">
               <i class="fa-solid fa-magnifying-glass"></i>

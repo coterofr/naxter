@@ -29,7 +29,8 @@
 
       <div class="col-12 col-md-6 mb-3">
         <label for="theme" class="form-label">{{ "post.theme.label" | translate }}</label>
-        <select class="form-select" aria-label="Themes" name="theme" [formControl]="theme" [ngClass]="{'is-invalid': themeInvalid}" [attr.disabled]="id ? '' : null">
+        <select class="form-select" aria-label="Themes" name="theme" [formControl]="theme" 
+          [ngClass]="{'is-invalid': themeInvalid}" [attr.disabled]="id ? '' : null">
           <option value="" disabled>{{ "post.theme.placeholder" | translate }}</option>
           <option *ngFor="let postTheme of themes" [value]="postTheme.name">{{ postTheme.name }}</option>
         </select>

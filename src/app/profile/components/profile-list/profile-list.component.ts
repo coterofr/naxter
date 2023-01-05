@@ -86,7 +86,7 @@ export class ProfileListComponent implements OnInit {
   }
 
   private isConsumer(user: User): boolean {
-    return this.roleService.isProducer(user);
+    return this.roleService.isConsumer(user);
   }
 
   isProducer(user: User): boolean {

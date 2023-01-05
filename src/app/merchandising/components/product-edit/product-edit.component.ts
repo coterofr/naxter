@@ -27,7 +27,6 @@ export class ProductEditComponent implements OnInit {
   
   productForm: FormGroup;
 
-
   constructor(private fb: FormBuilder,
               private merchandisingService: MerchandisingService,
               private jwtTokenService: JwtTokenService,

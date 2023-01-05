@@ -26,11 +26,10 @@ export class UserDetailsComponent implements OnInit {
 
   private id!: string;
   private configUser: ConfigUser;
+  private readonly ERROR_MESSAGE = 'exists';
   
   user: User;
   configForm: FormGroup;
-
-  private readonly ERROR_MESSAGE = 'exists';
 
   constructor(private fb: FormBuilder,
               private userService: UserService,
@@ -193,6 +192,7 @@ export class UserDetailsComponent implements OnInit {
         if(this.user.name === this.userLogged &&
           (this.user.name !== user.name || this.user.roles[0].type !== user.roles[0].type)) {
           this.user = user;
+          
           this.refreshJwtToken();
         } else {
           this.user = user;

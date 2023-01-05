@@ -1,3 +1,11 @@
+# Repositorio Github
+
+**Cliente Angular:** https://github.com/coterofr/naxter
+
+# Aplicación desplegada
+
+**Cliente Angular:** https://naxter.fly.dev/
+
 # Instalación del componente Angular
 
 Proyecto Angular preparado para ejecución con el directorio raíz y sin los directorios:
@@ -7,18 +15,18 @@ Proyecto Angular preparado para ejecución con el directorio raíz y sin los dir
 
 Mediante estos archivos se podrá ejecutar `npm i` para la instalación de las dependencias y ejecutar `ng serve` para la ejecución de la aplicación.
 
-#### Usuarios de prueba:
+# Usuarios de prueba
 
-1. **user**: user_1, **password**: 12345, **rol**: Generic
-2. **user**: user_2, **password**: 12345, **rol**: Generic
-3. **user**: user_3, **password**: 12345, **rol**: Consumer
-4. **user**: user_4, **password**: 12345, **rol**: Consumer
-5. **user**: user_5, **password**: 12345, **rol**: Producer
-6. **user**: user_6, **password**: 12345, **rol**: Producer
-7. **user**: user_7, **password**: 12345, **rol**: Moderator
-8. **user**: user_8, **password**: 12345, **rol**: Moderator
-9. **user**: user_9, **password**: 12345, **rol**: Administrator
-10. **user**: carlos_otero, **password**: 12345, **rol**: Administrator
+1. **user:** `user_1` **- password:** `12345` **- rol:** `Generic`
+2. **user:** `user_2` **- password:** `12345` **- rol:** `Generic`
+3. **user:** `user_3` **- password:** `12345` **- rol:** `Consumer`
+4. **user:** `user_4` **- password:** `12345` **- rol:** `Consumer`
+5. **user:** `user_5` **- password:** `12345` **- rol:** `Producer`
+6. **user:** `user_6` **- password:** `12345` **- rol:** `Producer`
+7. **user:** `user_7` **- password:** `12345` **- rol:** `Moderator`
+8. **user:** `user_8` **- password:** `12345` **- rol:** `Moderator`
+9. **user:** `user_9` **- password:** `12345` **- rol:** `Administrator`
+10. **user:** `carlos_otero` **- password:** `12345` **- rol:** `Administrator`
 
 ----------------------------------------------------------------------------------------------
 

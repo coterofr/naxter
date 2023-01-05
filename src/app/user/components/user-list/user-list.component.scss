@@ -1,5 +1,9 @@
 @import "src/styles";
 
+.table-responsive {
+  overflow-x: auto !important;
+}
+
 .list-users {
   padding-bottom: 10rem !important;
 }

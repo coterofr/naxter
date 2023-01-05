@@ -42,7 +42,7 @@
 
   <div id="alert-search" class="alert alert-info col-lg-6 col-md-6 col-sm-12 py-2 mb-5 fw-bold" role="alert">
     <i class="fa-solid fa-circle-info me-2"></i>
-    <span id="alert-search-text">{{ (posts$ | async)?.length }} {{ "themes.search.info" | translate }}</span>
+    <span id="alert-search-text">{{ (posts$ | async)?.length }} {{ "posts.search.info" | translate }}</span>
   </div>
 
   <div *ngIf="loading || (posts$ | async) === null" class="row col-12 animate__animated animate__fadeIn animate_slow">

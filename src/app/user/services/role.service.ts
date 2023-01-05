@@ -59,6 +59,11 @@ export class RoleService {
     }
   }
 
+  isConsumer(user: User):boolean {
+    return user.roles.some((role: Role) => RoleEnum.CONSUMER === role.type || RoleEnum.PRODUCER === role.type || 
+                                           RoleEnum.MODERATOR === role.type || RoleEnum.ADMIN === role.type);
+  }
+
   isProducer(user: User):boolean {
     return user.roles.some((role: Role) => RoleEnum.PRODUCER === role.type || RoleEnum.MODERATOR === role.type || RoleEnum.ADMIN === role.type);
   }
